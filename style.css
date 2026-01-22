@@ -42,8 +42,8 @@
 /* Responsif Mobile */
 @media (max-width: 768px) {
     .intro-video-container {
-        width: 180px;
-        height: 320px;
+        /* width: 180px;
+        height: 320px; */
     }
 }
 
