@@ -18,6 +18,65 @@ mybutton.addEventListener("click", function() {
     window.scrollTo({top: 0, behavior: 'smooth'});
 });
 document.addEventListener("DOMContentLoaded", function() {
+
+    const videoContainer = document.querySelector('.intro-video-container');
+    const introLogo = document.querySelector('.intro-logo');
+    const scrollTrigger = document.querySelector('.intro-scroll-trigger');
+    const navbar = document.querySelector('.wt-navbar-redesign');
+    const contentWrapper = document.getElementById('main-content-wrapper'); 
+
+    // [FIX] Hapus kunci animasi CSS setelah 2.5 detik (sesuai durasi animasi di CSS)
+    // Supaya JS bisa mengambil alih properti 'transform' untuk efek zoom
+    setTimeout(() => {
+        if(videoContainer) {
+            videoContainer.style.animation = 'none';
+        }
+    }, 2500); // 2500ms = 2.5 detik
+
+    window.addEventListener('scroll', function() {
+        let scrollY = window.scrollY;
+        let windowHeight = window.innerHeight;
+        
+        // Hitung progres scroll
+        let scrollRatio = scrollY / windowHeight;
+
+        // --- EFEK ZOOM & FADE OUT ---
+        if (scrollRatio <= 1.5) { 
+            
+            // Zoom: Awal 1, Maksimal 3.5
+            let scaleMultiplier = 2; 
+            let scaleValue = 1 + (scrollRatio * scaleMultiplier);
+            
+            // Batasi scale
+            scaleValue = Math.min(scaleValue, 3.5); 
+
+            // Terapkan Zoom ke Container
+            if(videoContainer) {
+                videoContainer.style.transform = `scale(${scaleValue})`;
+            }
+
+            // Fade out elemen intro (Logo & Text Scroll)
+            let opacityValue = 1 - (scrollRatio * 1.5); 
+            if(opacityValue < 0) opacityValue = 0;
+            
+            if(introLogo) introLogo.style.opacity = opacityValue;
+            if(scrollTrigger) scrollTrigger.style.opacity = opacityValue;
+        }
+
+        // --- LOGIKA KONTEN MUNCUL (FADE IN) ---
+        // Konten mulai muncul saat scroll sedikit saja
+        if (scrollY > (windowHeight * 0.1)) {
+            contentWrapper.classList.add('content-visible');
+            
+            navbar.classList.remove('hidden-nav');
+            navbar.classList.add('visible-nav');
+        } else {
+            contentWrapper.classList.remove('content-visible');
+            
+            navbar.classList.add('hidden-nav');
+            navbar.classList.remove('visible-nav');
+        }
+    });
     
     // 1. DAFTAR SEMUA FILE GAMBAR DARI PATH ANDA
     // Path dasar sesuai struktur folder Anda
@@ -158,62 +217,4 @@ document.addEventListener("DOMContentLoaded", function() {
             navbar.classList.remove('wt-navbar-scrolled');
         }
     });
-});
-
-document.addEventListener("DOMContentLoaded", function() {
-    
-    // --- 1. LOGIKA ZOOM INTRO & FADE IN (VERSI RINGAN) ---
-    const videoContainer = document.querySelector('.intro-video-container');
-    const introLogo = document.querySelector('.intro-logo');
-    const scrollTrigger = document.querySelector('.intro-scroll-trigger');
-    const navbar = document.querySelector('.wt-navbar-redesign');
-    const contentWrapper = document.getElementById('main-content-wrapper'); 
-    
-    window.addEventListener('scroll', function() {
-        let scrollY = window.scrollY;
-        let windowHeight = window.innerHeight;
-        
-        // Hitung progres scroll
-        let scrollRatio = scrollY / windowHeight;
-
-        // --- OPTIMASI: Batasi kalkulasi hanya jika belum lewat jauh ---
-        if (scrollRatio <= 1.5) { 
-            
-            let scaleMultiplier = 2; 
-            let scaleValue = 1 + (scrollRatio * scaleMultiplier);
-            
-            // Batasi maksimum scale agar GPU tidak jebol
-            scaleValue = Math.min(scaleValue, 3.5); 
-
-            videoContainer.style.transform = `scale(${scaleValue})`;
-
-            // Fade out elemen intro (Logo & Text Scroll) lebih cepat
-            // Dikali 3 supaya pas baru scroll dikit, tulisan udah hilang
-            let opacityValue = 1 - (scrollRatio * 1); 
-            if(opacityValue < 0) opacityValue = 0;
-            
-            introLogo.style.opacity = opacityValue;
-            scrollTrigger.style.opacity = opacityValue;
-        }
-
-        // --- LOGIKA KONTEN MUNCUL (FADE IN) ---
-        // Muncul lebih cepat, di 0.6 (60% scroll) konten sudah mulai diproses
-        if (scrollY > (windowHeight * 0.1)) {
-            
-            // Munculkan konten
-            contentWrapper.classList.add('content-visible');
-            
-            // Munculkan Navbar
-            navbar.classList.remove('hidden-nav');
-            navbar.classList.add('visible-nav');
-            
-        } else {
-            // Sembunyikan jika scroll balik ke atas
-            contentWrapper.classList.remove('content-visible');
-            
-            navbar.classList.add('hidden-nav');
-            navbar.classList.remove('visible-nav');
-        }
-    });
-
 });
