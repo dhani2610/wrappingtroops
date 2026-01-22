@@ -179,10 +179,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // --- OPTIMASI: Batasi kalkulasi hanya jika belum lewat jauh ---
         if (scrollRatio <= 1.5) { 
             
-            // Rumus Scale BARU (Lebih Ringan):
-            // Cukup dikali 15 (bukan 40). 
-            // Math.min memastikan scale mentok di 16, ga bakal lebih besar lagi biar ga berat.
-            let scaleMultiplier = 10; 
+            let scaleMultiplier = 2; 
             let scaleValue = 1 + (scrollRatio * scaleMultiplier);
             
             // Batasi maksimum scale agar GPU tidak jebol
@@ -192,7 +189,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
             // Fade out elemen intro (Logo & Text Scroll) lebih cepat
             // Dikali 3 supaya pas baru scroll dikit, tulisan udah hilang
-            let opacityValue = 1 - (scrollRatio * 3); 
+            let opacityValue = 1 - (scrollRatio * 1); 
             if(opacityValue < 0) opacityValue = 0;
             
             introLogo.style.opacity = opacityValue;
@@ -201,7 +198,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // --- LOGIKA KONTEN MUNCUL (FADE IN) ---
         // Muncul lebih cepat, di 0.6 (60% scroll) konten sudah mulai diproses
-        if (scrollY > (windowHeight * 0.6)) {
+        if (scrollY > (windowHeight * 0.1)) {
             
             // Munculkan konten
             contentWrapper.classList.add('content-visible');
