@@ -159,65 +159,71 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
-
 document.addEventListener("DOMContentLoaded", function() {
     
-    // --- 1. LOGIKA ZOOM INTRO & FADE IN (VERSI RINGAN) ---
     const videoContainer = document.querySelector('.intro-video-container');
     const introLogo = document.querySelector('.intro-logo');
     const scrollTrigger = document.querySelector('.intro-scroll-trigger');
     const navbar = document.querySelector('.wt-navbar-redesign');
     const contentWrapper = document.getElementById('main-content-wrapper'); 
+
+    // HITUNG SKALA MAKSIMAL SECARA DINAMIS
+    // Agar tidak berat, kita hitung berapa scale yg pas untuk menutupi layar
+    // Rumus: Lebar Layar dibagi Lebar Video (ditambah sedikit margin biar aman)
+    const baseWidth = videoContainer.offsetWidth;
+    const maxScaleNeeded = (window.innerWidth / baseWidth) * 1.5; 
     
+    // Batasi minimal 15x dan maksimal 25x untuk keamanan performa
+    const finalMaxScale = Math.min(Math.max(maxScaleNeeded, 15), 25);
+
     window.addEventListener('scroll', function() {
         let scrollY = window.scrollY;
         let windowHeight = window.innerHeight;
-        
-        // Hitung progres scroll
         let scrollRatio = scrollY / windowHeight;
 
-        // --- OPTIMASI: Batasi kalkulasi hanya jika belum lewat jauh ---
-        if (scrollRatio <= 1.5) { 
+        // --- 1. LOGIKA ZOOM (Smooth & Ringan) ---
+        if (scrollRatio <= 1.5) {
+            // Hitung scale berdasarkan scroll
+            // Kita pakai finalMaxScale agar pas menutup layar
+            let scaleValue = 1 + (scrollRatio * (finalMaxScale - 1));
             
-            // Rumus Scale BARU (Lebih Ringan):
-            // Cukup dikali 15 (bukan 40). 
-            // Math.min memastikan scale mentok di 16, ga bakal lebih besar lagi biar ga berat.
-            let scaleMultiplier = 10; 
-            let scaleValue = 1 + (scrollRatio * scaleMultiplier);
-            
-            // Batasi maksimum scale agar GPU tidak jebol
-            scaleValue = Math.min(scaleValue, 3.5); 
+            // KUNCI PENTING:
+            // Jika scrollRatio masih 0 (baru buka), biarkan CSS Animation yang bekerja (translateX)
+            // Jika user mulai scroll, baru JS ambil alih transformnya.
+            if (scrollY > 5) {
+                videoContainer.style.transform = `scale(${scaleValue})`;
+            } else {
+                // Reset transform agar animasi CSS 'slideInFromLeft' tidak bentrok saat di posisi paling atas
+                videoContainer.style.transform = ''; 
+            }
 
-            videoContainer.style.transform = `scale(${scaleValue})`;
-
-            // Fade out elemen intro (Logo & Text Scroll) lebih cepat
-            // Dikali 3 supaya pas baru scroll dikit, tulisan udah hilang
-            let opacityValue = 1 - (scrollRatio * 3); 
+            // Fade out elemen lain (Logo, dll)
+            let opacityValue = 1 - (scrollRatio * 2.5);
             if(opacityValue < 0) opacityValue = 0;
-            
             introLogo.style.opacity = opacityValue;
             scrollTrigger.style.opacity = opacityValue;
         }
 
-        // --- LOGIKA KONTEN MUNCUL (FADE IN) ---
-        // Muncul lebih cepat, di 0.6 (60% scroll) konten sudah mulai diproses
+        // --- 2. LOGIKA TRANSISI KONTEN (SNAPPY) ---
+        // Saat scroll mencapai 60% layar, konten langsung muncul menutupi video
         if (scrollY > (windowHeight * 0.6)) {
             
-            // Munculkan konten
+            // Tambahkan class agar muncul
             contentWrapper.classList.add('content-visible');
             
-            // Munculkan Navbar
+            // Navbar Muncul
             navbar.classList.remove('hidden-nav');
             navbar.classList.add('visible-nav');
-            
+
         } else {
-            // Sembunyikan jika scroll balik ke atas
+            // Sembunyikan lagi jika scroll ke atas
             contentWrapper.classList.remove('content-visible');
             
+            // Navbar Sembunyi
             navbar.classList.add('hidden-nav');
             navbar.classList.remove('visible-nav');
         }
     });
 
-    // ... (SISA KODE LAIN SEPERTI IMAGE SWAP & BACK TO TOP TETAP SAMA) ...
+    // ... (SISA KODE IMAGE SWAP & LAINNYA DI BAWAH SINI) ...
 });
