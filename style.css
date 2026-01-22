@@ -599,7 +599,7 @@ body {
 #ourServices {
     position: relative;
     z-index: 5; /* Di atas Hero, supaya background putihnya nutupin hero hitam */
-    padding-top: 150px !important; /* Ruang untuk video yang nonjol */
+    padding-top: 70px !important; /* Ruang untuk video yang nonjol */
 }
 
 /* 3. VIDEO CONTAINER (Layer Paling Atas & Penarik Layout) */
