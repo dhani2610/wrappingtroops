@@ -451,6 +451,7 @@ body {
 }
 
 .hero-main-logo {
+    margin-bottom: -23%;
     max-width: 450px; /* Ukuran logo di hero agar dominan */
     filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
 }
