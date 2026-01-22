@@ -625,7 +625,7 @@ body {
 /* ================= WHY CHOOSE US STYLES ================= */
 .wt-img-frame {
     position: relative;
-    border: 10px solid #f8f9fa;
+    /* border: 10px solid #f8f9fa; */
     transition: transform 0.3s ease;
 }
 
