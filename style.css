@@ -27,6 +27,80 @@ body {
 }
 
 /* ================= NAVBAR STYLES ================= */
+
+/* 1. State Awal (Saat di posisi paling atas) */
+.wt-navbar-redesign {
+    background: transparent; /* Transparan agar menyatu dengan hero */
+    padding-top: 20px; /* Sedikit renggang saat di atas */
+    padding-bottom: 20px;
+    transition: all 0.4s ease; /* Efek transisi halus saat berubah warna */
+}
+
+/* 2. State Scrolled (Saat di-scroll ke bawah) */
+/* Class ini ditambahkan otomatis oleh script.js kamu */
+.wt-navbar-scrolled {
+    background-color: rgba(0, 0, 0, 0.95) !important; /* Hitam pekat (sedikit transparan) */
+    padding-top: 10px !important; /* Memadat (mengecil) saat di scroll */
+    padding-bottom: 10px !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Bayangan halus */
+}
+
+/* Style untuk link menu */
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255,255,255,0.8);
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+    color: var(--wt-orange);
+}
+
+/* CTA Pill (Nomor HP & Tombol Order) */
+.wt-cta-pill {
+    background-color: #fff;
+    border-radius: 50px;
+    padding: 5px 5px 5px 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.wt-cta-pill .phone-number {
+    color: var(--wt-dark);
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.wt-btn-order {
+    border-radius: 50px;
+    padding: 8px 25px;
+    font-size: 0.9rem;
+}
+
+/* Responsif Navbar untuk Mobile */
+@media (max-width: 991.98px) {
+    .wt-navbar-redesign {
+        /* Di HP, sebaiknya langsung hitam atau gelap agar menu terlihat jelas */
+        background-color: rgba(0, 0, 0, 0.9) !important; 
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .wt-cta-pill {
+        margin-top: 1rem;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .navbar-nav {
+        text-align: center;
+        margin-top: 1rem;
+    }
+}
+
+/* ================= NAVBAR STYLES ================= */
 .wt-navbar {
     /* Opsional: Jika ingin background ada tekstur halus seperti gambar asli, 
        gunakan background-image di sini dengan overlay gelap */
@@ -195,8 +269,7 @@ body {
     width: 100%;
     height: 100%;
     /* Gunakan gambar jembatan dari desain lama Anda */
-    background-image: linear-gradient(to right, rgba(0,0,0,0.85) 30%, rgba(0,0,0,0.4) 100%), 
-                      url('assets/img/hero/hero1.jpg'); 
+    background-image: url('assets/img/hero/hero1.jpg'); 
     background-size: cover;
     background-position: center;
     z-index: 1;
@@ -334,44 +407,46 @@ body {
 .delay-4 { animation-delay: 0.8s; }
 
 @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+/* ================= FIX OVERLAP VIDEO (NO GAP) ================= */
 
-/* ================= OVERLAP VIDEO EFFECT ================= */
-
-/* 1. Geser video ke bawah 50% melewati batas section hero */
-.video-overlap {
-    transform: translateY(50%);
-    position: relative;
-    z-index: 10; /* Pastikan video berada di atas section bawahnya */
-}
-
+/* 1. HERO SECTION (Layer Paling Bawah) */
 .wt-hero-static {
     position: relative;
-    z-index: 20 !important; /* Angka tinggi agar berada di atas section bawahnya */
-    /* Pastikan tidak ada overflow:hidden disini, atau video akan terpotong */
-    overflow: visible !important; 
+    z-index: 20 !important; /* Layer paling bawah */
+    overflow: visible !important; /* Biar video bisa nonjol keluar */
+    /* Matikan min-height 100vh jika terlalu tinggi, ganti secukupnya */
+    min-height: 80vh; 
+    padding-bottom: 50px;
 }
 
-/* 2. Sesuaikan padding section Services agar tidak ketutupan video */
+/* 2. SERVICES SECTION (Layer Tengah) */
 #ourServices {
-    /* Padding atas ditambah drastis untuk kompensasi video yg turun */
-    /* Sesuaikan angka 200px ini jika video terlalu besar/kecil */
-    padding-top: 200px !important; 
     position: relative;
-    z-index: 1;
+    z-index: 5; /* Di atas Hero, supaya background putihnya nutupin hero hitam */
+    padding-top: 150px !important; /* Ruang untuk video yang nonjol */
 }
 
-/* 3. Matikan efek ini di layar HP (Mobile) agar rapi */
+/* 3. VIDEO CONTAINER (Layer Paling Atas & Penarik Layout) */
+.video-overlap {
+    position: relative;
+    z-index: 10!important; /* Harus paling tinggi biar gak ketutup section bawah */
+    
+    /* HAPUS transform yang bikin gap jauh */
+    transform: none !important; 
+    
+    margin-bottom: -40%; 
+}
+
+/* 4. Reset untuk HP (Mobile) */
 @media (max-width: 991.98px) {
     .video-overlap {
-        transform: translateY(0); /* Balik ke posisi normal */
-        margin-bottom: 30px; /* Beri jarak bawah sedikit */
+        margin-bottom: 30px; /* Reset margin di HP */
     }
-
+    
     #ourServices {
-        padding-top: 80px !important; /* Balik ke padding normal */
+        padding-top: 80px !important; /* Reset padding di HP */
     }
 }
-
 /* ================= WHY CHOOSE US STYLES ================= */
 .wt-img-frame {
     position: relative;
