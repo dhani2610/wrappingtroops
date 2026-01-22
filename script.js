@@ -149,12 +149,12 @@ document.addEventListener("DOMContentLoaded", function() {
         "IMG-20220530-WA0041.jpg",
         "IMG-20220530-WA0056.jpg",
         "IMG-20220530-WA0072.jpg",
-        "IMG-20220602-WA0098.jpg",
+        // "IMG-20220602-WA0098.jpg",
         "IMG-20220603-WA0001.jpg",
         "IMG-20220604-WA0000.jpg",
         "Klien UMKM.jpg",
         "Screenshot_20180921-135205_1.png",
-        "Team.jpg"
+        // "Team.jpg"
     ];
 
     // Seleksi semua elemen gambar di grid
