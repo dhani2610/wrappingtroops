@@ -24,13 +24,13 @@
     transform-origin: center center;
     will-change: transform;
     
-    animation: slideInFromLeft 2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    animation: slideInFromLeft 5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
 
 /* Definisi Animasi */
 @keyframes slideInFromLeft {
     0% {
-        transform: translateX(-500%) scale(0.8) rotate(-5deg); /* Dari jauh kiri, agak miring */
+        transform: translateX(-200%) scale(0.8) rotate(-5deg); /* Dari jauh kiri, agak miring */
         opacity: 0;
     }
     100% {
@@ -914,5 +914,39 @@ body {
     .ps-lg-5, .pe-lg-5 {
         padding-left: 0 !important;
         padding-right: 0 !important;
+    }
+}
+
+/* ================= ORANGE VIDEO SECTION STYLES ================= */
+
+.wt-orange-video-section {
+    background-color: #FF9900; /* Warna Oranye Branding */
+    width: 100%;
+    position: relative;
+    
+    /* Padding Atas & Bawah agar warna oranye-nya terlihat */
+    /* Jika ingin videonya benar-benar nempel atas bawah tanpa sela oranye, ubah jadi 0 */
+    padding: 50px 0; 
+}
+
+.wt-full-video-wrapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    line-height: 0; /* Menghilangkan gap putih kecil di bawah video */
+}
+
+.wt-video-fluid {
+    width: 100%;        /* Full Kanan-Kiri */
+    height: auto;       /* Tinggi menyesuaikan otomatis (Responsive) */
+    display: block;     /* Agar tidak ada margin bawaan inline element */
+    object-fit: cover;  /* Memastikan video menutupi area dengan rapi */
+}
+
+/* Responsif untuk Mobile */
+@media (max-width: 768px) {
+    .wt-orange-video-section {
+        /* Di HP mungkin paddingnya dikecilkan sedikit */
+        padding: 30px 0; 
     }
 }
