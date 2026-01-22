@@ -1,3 +1,166 @@
+/* ================= INTRO SECTION (REVISI) ================= */
+#intro-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 0; 
+    overflow: hidden;
+    background-color: #000; /* Latar belakang hitam pekat */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Memastikan video pas di tengah */
+}
+
+/* Container Video: KECIL DI TENGAH */
+.intro-video-container {
+    position: relative; /* Bukan absolute lagi */
+    width: 250px; /* Lebar fix kecil */
+    height: 400px; /* Tinggi fix (sesuaikan rasio video anda) */
+    border-radius: 20px; /* Sudut melengkung agar estetik */
+    overflow: hidden;
+    
+    /* Transform origin di tengah agar zoom dari tengah */
+    transform-origin: center center;
+    will-change: transform; /* Optimasi performa */
+}
+
+/* Di layar HP, sesuaikan ukurannya */
+@media (max-width: 768px) {
+    .intro-video-container {
+        width: 180px;
+        height: 320px;
+    }
+    .intro-logo img {
+        height: 132px;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+    }
+}
+
+#hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 1; /* Video jelas */
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.1);
+    z-index: 1;
+}
+
+/* ================= MAIN CONTENT (FADE IN EFFECT) ================= */
+#main-content-wrapper {
+    position: relative;
+    z-index: 20;
+    margin-top: 100vh; /* Tetap didorong ke bawah */
+    background-color: #f4f4f4;
+    
+    /* KUNCI FADE IN: Awalnya transparan */
+    opacity: 0; 
+    pointer-events: none; /* Agar tidak bisa diklik saat transparan */
+    transition: opacity 0.8s ease-in-out; /* Efek muncul halus */
+}
+
+/* Class ini akan ditambahkan JS saat scroll sudah mentok */
+#main-content-wrapper.content-visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+/* Logo Kiri Atas Intro */
+.intro-logo {
+    position: absolute;
+    top: 30px;
+    left: 5%;
+    z-index: 10;
+    transition: opacity 0.5s ease;
+}
+.intro-logo img {
+    height: 200px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+}
+
+/* Scroll Trigger Kanan */
+.intro-scroll-trigger {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    color: white;
+    text-align: center;
+    transition: opacity 0.5s ease;
+}
+
+/* Desain Icon Mouse Sederhana */
+.scroll-icon-box .mouse-icon {
+    width: 30px;
+    height: 50px;
+    border: 2px solid white;
+    border-radius: 20px;
+    margin: 0 auto;
+    position: relative;
+}
+.scroll-icon-box .mouse-icon::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background: white;
+    border-radius: 50%;
+    animation: scrollMouse 1.5s infinite;
+}
+
+@keyframes scrollMouse {
+    0% { top: 10px; opacity: 1; }
+    100% { top: 30px; opacity: 0; }
+}
+
+/* ================= MAIN CONTENT WRAPPER ================= */
+#main-content-wrapper {
+    position: relative;
+    z-index: 20; /* Harus lebih tinggi dari intro */
+    margin-top: 100vh; /* PENTING: Mendorong konten ke bawah layar awal */
+    background-color: #f4f4f4; /* Background penutup video */
+    box-shadow: 0 -10px 30px rgba(0,0,0,0.2); /* Bayangan di atas konten */
+}
+
+/* ================= NAVBAR LOGIC ================= */
+.hidden-nav {
+    transform: translateY(-100%); /* Sembunyi di atas layar */
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.visible-nav {
+    transform: translateY(0); /* Muncul */
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.95) !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+
+/* Hilangkan elemen intro di HP agar lebih ringan (Opsional) */
+@media (max-width: 768px) {
+    .intro-scroll-trigger {
+        right: auto;
+        bottom: 30px;
+        top: auto;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .intro-logo {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
 /* ================= GLOBAL STYLES ================= */
 :root {
     --wt-orange: #FF9900; /* Warna oranye aksen */
