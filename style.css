@@ -431,7 +431,7 @@ body {
 
 /* Style khusus untuk Gambar di dalam tombol */
 #btnBackToTop img {
-    width: 50px;    /* Ukuran gambar (sesuaikan keinginan, misal 20px - 30px) */
+    width: 100px;    /* Ukuran gambar (sesuaikan keinginan, misal 20px - 30px) */
     height: auto;
     display: block;
     margin: 0 auto; /* Mengetengahkan jika display button adalah block */
