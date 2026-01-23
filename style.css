@@ -442,16 +442,16 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 137%;
     /* Gunakan gambar jembatan dari desain lama Anda */
-    background-image: url('assets/fe/portofolio/FOTO UTAMA.JPG'); 
+    background-image: url('assets/fe/portofolio/hero2.png'); 
     background-size: cover;
     background-position: center;
     z-index: 1;
 }
 
 .hero-main-logo {
-    margin-bottom: -20%;
+    margin-bottom: -43%;
     max-width: 900px;
     filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
 }
@@ -509,7 +509,7 @@ body {
     .hero-bg-overlay {
         /* Di mobile, buat overlay hitam merata agar teks putih terbaca */
         background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                          url('assets/fe/portofolio/FOTO UTAMA.JPG');
+                          url('assets/fe/portofolio/hero2.png');
     }
 }
 
@@ -901,8 +901,16 @@ body {
 
 /* Pastikan section punya jarak nafas yang cukup */
 .wt-section-padding {
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.wt-line-accent-new {
+    width: 50px;          /* Atur panjang garis sesuai selera */
+    height: 3px;          /* Ketebalan garis */
+    background-color: #ffc107; /* Warna orange/warning */
+    border-radius: 10px;  /* Supaya ujung garis agak bulat */
+    display: inline-block;
 }
 
 @media (max-width: 991.98px) {
@@ -921,12 +929,11 @@ body {
 /* ================= ORANGE VIDEO SECTION STYLES ================= */
 
 .wt-orange-video-section {
-    background-color: #FF9900; /* Warna Oranye Branding */
+    margin-top: 14%;
+    background-color: white; /* Warna Oranye Branding */
     width: 100%;
     position: relative;
     
-    /* Padding Atas & Bawah agar warna oranye-nya terlihat */
-    /* Jika ingin videonya benar-benar nempel atas bawah tanpa sela oranye, ubah jadi 0 */
     padding: 50px 0; 
 }
 
