@@ -402,29 +402,43 @@ body {
         padding-left: 0 !important;
     }
 }
-
-/* ================= BACK TO TOP BUTTON ================= */
+/* ================= BACK TO TOP BUTTON (FIXED) ================= */
 #btnBackToTop {
-    display: none; /* Hidden by default */
+    display: none; /* Hidden by default, dimunculkan oleh JS */
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 91px;   /* Jarak dari bawah */
+    right: 30px;    /* Jarak dari kanan */
     z-index: 99;
+    
+    /* Membuat tombol jadi lingkaran */
+    width: 50px;    
+    height: 50px;
+    border-radius: 50%;
+    padding: 0;     /* Hapus padding agar bisa di-center dengan flex */
+    
     border: none;
     outline: none;
-    background-color: var(--wt-orange);
-    color: white;
+    background-color: transparent;
     cursor: pointer;
-    padding: 12px 15px;
-    border-radius: 10px;
-    font-size: 18px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    transition: background-color 0.3s, transform 0.3s;
+    /* transition: background-color 0.3s, transform 0.3s; */
+
+    /* Mengetengahkan Gambar */
+    align-items: center;
+    justify-content: center;
+    /* Note: Tambahkan display: flex di JS saat tombol muncul, 
+       atau biarkan default tapi pastikan img di tengah */
+}
+
+/* Style khusus untuk Gambar di dalam tombol */
+#btnBackToTop img {
+    width: 50px;    /* Ukuran gambar (sesuaikan keinginan, misal 20px - 30px) */
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Mengetengahkan jika display button adalah block */
 }
 
 #btnBackToTop:hover {
-    background-color: #e68a00;
-    transform: translateY(-3px);
+    transform: translateY(-5px); /* Efek naik dikit saat hover */
 }
 
 /* ================= STATIC HERO STYLES ================= */
