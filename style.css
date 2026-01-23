@@ -406,8 +406,8 @@ body {
 #btnBackToTop {
     display: none; /* Hidden by default, dimunculkan oleh JS */
     position: fixed;
-    bottom: 91px;   /* Jarak dari bawah */
-    right: 30px;    /* Jarak dari kanan */
+    bottom: 210px;   /* Jarak dari bawah */
+    right: 76px;    /* Jarak dari kanan */
     z-index: 99;
     
     /* Membuat tombol jadi lingkaran */
