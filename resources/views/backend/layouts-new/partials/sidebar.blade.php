@@ -40,35 +40,6 @@
             </a>
         </li>
 
-  
-        @if ($usr->can('customer.view'))
-            <li class="menu-item ">
-                <a href="{{ route('customer') }}" class="menu-link ">
-                    <i class='menu-icon tf-icons bx bx-group'></i>
-                    <div class="text-truncate">Customer</div>
-                </a>
-            </li>
-        @endif
-       
-
-        @if ($usr->can('team.view'))
-            <li class="menu-item">
-                <a href="{{ route('admin.admins.index') }}" class="menu-link ">
-                    <i class='menu-icon tf-icons bx bx-user'></i>
-                    <div class="text-truncate">Team</div>
-                </a>
-            </li>
-        @endif
-
-
-        <li class="menu-item">
-            <a href="{{ route('support') }}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-support"></i>
-                <div class="text-truncate" data-i18n="Support">Support</div>
-            </a>
-        </li>
-
-
         @if ($usr->can('role.view') || $usr->can('services.view') || $usr->can('divisi.view'))
             <!-- Layouts -->
             <li class="menu-item">
@@ -78,50 +49,6 @@
                 </a>
 
                 <ul class="menu-sub">
-
-                    @if ($usr->can('services.view'))
-                        <li class="menu-item">
-                            <a href="{{ route('services') }}" class="menu-link">
-                                <div data-i18n="Product">Product</div>
-                            </a>
-                        </li>
-                    @endif
-
-                    {{-- @if ($usr->can('divisi.view'))
-                        <li class="menu-item">
-                            <a href="{{ route('divisi') }}" class="menu-link">
-                                <div data-i18n="Divisi">Divisi</div>
-                            </a>
-                        </li>
-                    @endif --}}
-
-                    @if ($usr->can('state.view'))
-                        <li class="menu-item">
-                            <a href="{{ route('state') }}" class="menu-link">
-                                <div data-i18n="State">State</div>
-                            </a>
-                        </li>
-                    @endif
-                    @if ($usr->can('city.view'))
-                        <li class="menu-item">
-                            <a href="{{ route('city') }}" class="menu-link">
-                                <div data-i18n="City">City</div>
-                            </a>
-                        </li>
-                    @endif
-                    @if ($usr->can('category.document.view'))
-                        <li class="menu-item">
-                            <a href="{{ route('category-document') }}" class="menu-link">
-                                <div data-i18n="Category">Category</div>
-                            </a>
-                        </li>
-                    @endif
-
-                    <li class="menu-item">
-                        <a href="{{ route('slider') }}" class="menu-link">
-                            <div data-i18n="Slider Info">Slider Info</div>
-                        </a>
-                    </li>
 
                     @if ($usr->can('portofolio.view'))
                         <li class="menu-item">
@@ -137,14 +64,6 @@
                             </a>
                         </li>
                     @endif
-                    @if ($usr->can('mesin.view'))
-                        <li class="menu-item">
-                            <a href="{{ route('mesin') }}" class="menu-link">
-                                <div data-i18n="Mesin">Mesin</div>
-                            </a>
-                        </li>
-                    @endif
-
                 </ul>
             </li>
         @endif

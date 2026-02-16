@@ -78,7 +78,6 @@ class SettingController extends Controller
             return redirect()->back();
 
         } catch (\Throwable $th) {
-            dd($th->getMessage());
             session()->flash('failed', 'Data has failed updated');
             return redirect()->back();
         }

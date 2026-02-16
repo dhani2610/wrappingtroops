@@ -20,10 +20,6 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', 'FrontendController@home')->name('index');
-Route::get('/detail/{id}', 'FrontendController@detailProd')->name('detail-prod');
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/category', 'FrontendController@category')->name('category-landing');
-Route::get('/generate-data', 'FrontendController@generate')->name('generate-data');
 
 /**
  * Admin routes
@@ -32,10 +28,6 @@ Route::group(['prefix' => 'admin'], function () {
     Route::group(['prefix' => 'profile'], function () {
         Route::get('/', 'Backend\ProfileController@changePassword')->name('profile');
         Route::post('/proses-change-password', 'Backend\ProfileController@changePasswordProses')->name('profile.proses-change-password');
-    });
-
-    Route::group(['prefix' => 'support'], function () {
-        Route::get('/', 'Backend\SupportController@index')->name('support');
     });
 
     Route::group(['prefix' => 'setting'], function () {

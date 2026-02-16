@@ -39,27 +39,8 @@
                         <span>{{ $user->name }}</span>
                     </li>
                     <li class="mb-3">
-                        <span class="fw-medium me-2">Whatsapp:</span>
-                        <span>{{ $user->whatsapp ?? '-' }}</span>
-                    </li>
-                    <li class="mb-3">
                         <span class="fw-medium me-2">Email:</span>
                         <span>{{ $user->email ?? '-' }}</span>
-                    </li>
-
-                    <li class="mb-3">
-                        <span class="fw-medium me-2">State:</span>
-                        @php
-                            $datastate = \App\Models\State::where('id', $user->id_state)->first();
-                        @endphp
-                        <span>{{ $datastate->state ?? '-' }}</span>
-                    </li>
-                    <li class="mb-3">
-                        <span class="fw-medium me-2">City:</span>
-                        @php
-                            $datacty = \App\Models\City::where('id', $user->id_city)->first();
-                        @endphp
-                        <span>{{ $datacty->city ?? '-' }}</span>
                     </li>
 
                     <li class="mb-3">

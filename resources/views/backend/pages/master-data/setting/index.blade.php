@@ -35,21 +35,6 @@
                                             placeholder="Enter Name" value="" data-default-file="{{ asset('assets/img/logo/' . $setting->logo) }}">
                                     </div>
                                     <div class="form-group col-md-12 col-sm-12 mb-3">
-                                        <label for="name" class="mb-3">BANNER POPUP</label>
-                                        <input type="file" class="form-control dropify" id="banner_popup" name="banner_popup"
-                                            placeholder="Enter Name" value="" data-default-file="{{ asset('assets/img/banner_popup/' . $setting->banner_popup) }}">
-                                    </div>
-                                    <div class="form-group col-md-12 col-sm-12 mb-3">
-                                        <label for="name" class="mb-3">PROMO</label>
-                                        <input type="file" class="form-control dropify" id="promo" name="promo"
-                                            placeholder="Enter Name" value="" data-default-file="{{ asset('assets/img/promo/' . $setting->promo) }}">
-                                    </div>
-                                    <div class="form-group col-md-12 col-sm-12 mb-3">
-                                        <label for="name" class="mb-3">MESIN</label>
-                                        <input type="file" class="form-control dropify" id="mesin" name="mesin"
-                                            placeholder="Enter Name" value="" data-default-file="{{ asset('assets/img/mesin/' . $setting->mesin) }}">
-                                    </div>
-                                    <div class="form-group col-md-12 col-sm-12 mb-3">
                                         <label for="name" class="mb-3">JUDUL WEBSITE</label>
                                         <input type="text" class="form-control" id="nama_website" value="{{ $setting->nama_website }}" name="nama_website"
                                             placeholder="Enter Name Website" required value="">

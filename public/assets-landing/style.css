@@ -1,0 +1,980 @@
+/* ================= INTRO SECTION (REVISI) ================= */
+#intro-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 0; 
+    overflow: hidden;
+    background-color: #000; /* Latar belakang hitam pekat */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Memastikan video pas di tengah */
+}
+
+/* Container Video: KECIL DI TENGAH */
+.intro-video-container {
+    position: relative;
+    /* width: 250px;
+    height: 400px; */
+    border-radius: 20px;
+    overflow: hidden;
+    
+    transform-origin: center center;
+    will-change: transform;
+    
+    animation: slideInFromLeft 5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* Definisi Animasi */
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-200%) scale(0.8) rotate(-5deg); /* Dari jauh kiri, agak miring */
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0) scale(1) rotate(0deg); /* Ke tengah tegak */
+        opacity: 1;
+    }
+}
+
+/* Responsif Mobile */
+@media (max-width: 768px) {
+    .intro-video-container {
+        /* width: 180px;
+        height: 320px; */
+    }
+}
+
+#hero-video {
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+    opacity: 1; /* Video jelas */
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.1);
+    z-index: 1;
+}
+
+/* ================= MAIN CONTENT (FADE IN EFFECT) ================= */
+#main-content-wrapper {
+    position: relative;
+    z-index: 20;
+    margin-top: 100vh; /* Tetap didorong ke bawah */
+    background-color: #f4f4f4;
+    
+    /* KUNCI FADE IN: Awalnya transparan */
+    opacity: 0; 
+    pointer-events: none; /* Agar tidak bisa diklik saat transparan */
+    transition: opacity 0.8s ease-in-out; /* Efek muncul halus */
+}
+
+/* Class ini akan ditambahkan JS saat scroll sudah mentok */
+#main-content-wrapper.content-visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+/* Logo Kiri Atas Intro */
+.intro-logo {
+    position: absolute;
+    top: 30px;
+    left: 5%;
+    z-index: 10;
+    transition: opacity 0.5s ease;
+}
+.intro-logo img {
+    height: 90px;
+    position: absolute;
+    top: 230px;
+    left: 203px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+}
+
+/* Scroll Trigger Kanan */
+.intro-scroll-trigger {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    color: white;
+    text-align: center;
+    transition: opacity 0.5s ease;
+}
+
+/* Desain Icon Mouse Sederhana */
+.scroll-icon-box .mouse-icon {
+    width: 30px;
+    height: 50px;
+    border: 2px solid white;
+    border-radius: 20px;
+    margin: 0 auto;
+    position: relative;
+}
+.scroll-icon-box .mouse-icon::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background: white;
+    border-radius: 50%;
+    animation: scrollMouse 1.5s infinite;
+}
+
+@keyframes scrollMouse {
+    0% { top: 10px; opacity: 1; }
+    100% { top: 30px; opacity: 0; }
+}
+
+/* ================= MAIN CONTENT WRAPPER ================= */
+#main-content-wrapper {
+    position: relative;
+    z-index: 20; /* Harus lebih tinggi dari intro */
+    margin-top: 100vh; /* PENTING: Mendorong konten ke bawah layar awal */
+    background-color: #f4f4f4; /* Background penutup video */
+    box-shadow: 0 -10px 30px rgba(0,0,0,0.2); /* Bayangan di atas konten */
+}
+
+/* ================= NAVBAR LOGIC ================= */
+.hidden-nav {
+    transform: translateY(-100%); /* Sembunyi di atas layar */
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.visible-nav {
+    transform: translateY(0); /* Muncul */
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.95) !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+
+/* Hilangkan elemen intro di HP agar lebih ringan (Opsional) */
+@media (max-width: 768px) {
+    .intro-scroll-trigger {
+        right: auto;
+        bottom: 30px;
+        top: auto;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .intro-logo {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+/* ================= GLOBAL STYLES ================= */
+:root {
+    --wt-orange: #FF9900; /* Warna oranye aksen */
+    --wt-dark: #212529; /* Warna background gelap */
+    --wt-darker: #1a1d20; /* Warna background footer bawah */
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Menggunakan font modern */
+}
+
+/* Warna teks oranye kustom */
+.text-warning {
+    color: var(--wt-orange) !important;
+}
+
+/* Warna tombol oranye kustom */
+.btn-warning {
+    background-color: var(--wt-orange);
+    border-color: var(--wt-orange);
+    color: #fff;
+}
+.btn-warning:hover {
+    background-color: #e68a00;
+    border-color: #e68a00;
+    color: #fff;
+}
+
+/* ================= NAVBAR STYLES ================= */
+
+/* 1. State Awal (Saat di posisi paling atas) */
+.wt-navbar-redesign {
+    background: transparent; /* Transparan agar menyatu dengan hero */
+    padding-top: 20px; /* Sedikit renggang saat di atas */
+    padding-bottom: 20px;
+    transition: all 0.4s ease; /* Efek transisi halus saat berubah warna */
+}
+
+/* 2. State Scrolled (Saat di-scroll ke bawah) */
+/* Class ini ditambahkan otomatis oleh script.js kamu */
+.wt-navbar-scrolled {
+    background-color: rgba(0, 0, 0, 0.95) !important; /* Hitam pekat (sedikit transparan) */
+    padding-top: 10px !important; /* Memadat (mengecil) saat di scroll */
+    padding-bottom: 10px !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Bayangan halus */
+}
+
+/* Style untuk link menu */
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255,255,255,0.8);
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+    color: var(--wt-orange);
+}
+
+/* CTA Pill (Nomor HP & Tombol Order) */
+.wt-cta-pill {
+    background-color: #fff;
+    border-radius: 50px;
+    padding: 5px 5px 5px 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.wt-cta-pill .phone-number {
+    color: var(--wt-dark);
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.wt-btn-order {
+    border-radius: 50px;
+    padding: 8px 25px;
+    font-size: 0.9rem;
+}
+
+/* Responsif Navbar untuk Mobile */
+@media (max-width: 991.98px) {
+    .wt-navbar-redesign {
+        /* Di HP, sebaiknya langsung hitam atau gelap agar menu terlihat jelas */
+        background-color: rgba(0, 0, 0, 0.9) !important; 
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .wt-cta-pill {
+        margin-top: 1rem;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .navbar-nav {
+        text-align: center;
+        margin-top: 1rem;
+    }
+}
+
+/* ================= NAVBAR STYLES ================= */
+.wt-navbar {
+    /* Opsional: Jika ingin background ada tekstur halus seperti gambar asli, 
+       gunakan background-image di sini dengan overlay gelap */
+    background: linear-gradient(rgba(33, 37, 41, 0.95), rgba(33, 37, 41, 0.95));
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+/* Style untuk link menu */
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255,255,255,0.8);
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+    color: var(--wt-orange);
+}
+
+/* CTA Pill (Nomor HP & Tombol Order) */
+.wt-cta-pill {
+    background-color: #fff;
+    border-radius: 50px;
+    padding: 5px 5px 5px 20px; /* Padding kiri lebih besar untuk teks nomor */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.wt-cta-pill .phone-number {
+    color: var(--wt-dark);
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.wt-btn-order {
+    border-radius: 50px;
+    padding: 8px 25px;
+    font-size: 0.9rem;
+}
+
+/* Responsif Navbar untuk Mobile */
+@media (max-width: 991.98px) {
+    .wt-cta-pill {
+        margin-top: 1rem;
+        width: fit-content;
+        /* Di mobile, pill ditaruh di tengah */
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .navbar-nav {
+        text-align: center;
+        margin-top: 1rem;
+    }
+}
+
+
+/* ================= FOOTER STYLES ================= */
+.wt-footer {
+    background-color: var(--wt-dark);
+    position: relative;
+    /* Tambahkan border atas oranye tipis jika diinginkan */
+    border-top: 3px solid var(--wt-orange);
+}
+
+.wt-footer-contact li {
+    font-size: 0.95rem;
+    color: #ccc;
+}
+
+.wt-footer-contact i {
+    width: 20px; /* Lebar tetap untuk ikon agar teks rata */
+}
+
+.wt-footer-contact a:hover {
+    color: var(--wt-orange) !important;
+}
+
+/* Maskot di Footer */
+/* Teknik ini membuat maskot "keluar" dari batas atas footer */
+.wt-footer-mascot-container {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: auto;
+    pointer-events: none; /* Agar tidak menghalangi klik di area lain */
+    z-index: 10;
+}
+
+.wt-footer-mascot {
+    max-height: 450px; /* Sesuaikan tinggi maskot */
+    width: auto;
+    float: right;
+    /* Margin negatif agar menyembul ke atas */
+    margin-bottom: -60px; 
+    /* Filter drop-shadow agar outline putih terlihat jelas di background gelap */
+    filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.2));
+}
+
+/* Baris Copyright di paling bawah */
+.wt-copyright {
+    background-color: var(--wt-darker);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    color: #888;
+    position: relative;
+    z-index: 11; /* Di atas maskot */
+}
+
+/* Responsif Footer */
+@media (max-width: 991.98px) {
+    /* Sembunyikan maskot besar di tablet/mobile agar tidak menumpuk konten */
+    .wt-footer-mascot {
+        display: none;
+    }
+    .wt-footer {
+        text-align: center;
+    }
+    .wt-footer-contact li {
+        justify-content: center;
+    }
+    .map-container.ps-md-4 {
+        padding-left: 0 !important;
+    }
+}
+/* ================= BACK TO TOP BUTTON (FIXED) ================= */
+#btnBackToTop {
+    display: none; /* Hidden by default, dimunculkan oleh JS */
+    position: fixed;
+    bottom: 210px;   /* Jarak dari bawah */
+    right: 76px;    /* Jarak dari kanan */
+    z-index: 99;
+    
+    /* Membuat tombol jadi lingkaran */
+    width: 50px;    
+    height: 50px;
+    border-radius: 50%;
+    padding: 0;     /* Hapus padding agar bisa di-center dengan flex */
+    
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    /* transition: background-color 0.3s, transform 0.3s; */
+
+    /* Mengetengahkan Gambar */
+    align-items: center;
+    justify-content: center;
+    /* Note: Tambahkan display: flex di JS saat tombol muncul, 
+       atau biarkan default tapi pastikan img di tengah */
+}
+
+/* Style khusus untuk Gambar di dalam tombol */
+#btnBackToTop img {
+    width: 100px;    /* Ukuran gambar (sesuaikan keinginan, misal 20px - 30px) */
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Mengetengahkan jika display button adalah block */
+}
+
+#btnBackToTop:hover {
+    transform: translateY(-5px); /* Efek naik dikit saat hover */
+}
+
+/* ================= STATIC HERO STYLES ================= */
+.wt-hero-static {
+    position: relative;
+    min-height: 90vh; /* Sedikit lebih pendek dari full screen agar user tahu ada konten di bawah */
+    padding-top: 100px; /* Jarak untuk navbar fixed */
+    background-color: #1a1d20;
+    overflow: hidden;
+}
+
+/* Background dengan gambar bridge */
+.hero-bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 137%;
+    /* Gunakan gambar jembatan dari desain lama Anda */
+    background-image: url('assets/fe/portofolio/hero2.png'); 
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.hero-main-logo {
+    margin-bottom: -43%;
+    max-width: 900px;
+    filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
+}
+
+.hero-mascot-container img {
+    max-height: 550px;
+    filter: drop-shadow(0 15px 30px rgba(0,0,0,0.5));
+}
+
+/* Animasi Halus */
+.floating-animation {
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-25px); }
+}
+
+/* Helper Animasi Masuk */
+.animate-fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s forwards ease-out;
+}
+
+.animate-fade-in-right {
+    opacity: 0;
+    transform: translateX(50px);
+    animation: fadeInRight 1s forwards ease-out 0.4s;
+}
+
+@keyframes fadeInUp {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInRight {
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Delays untuk teks */
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+
+/* Responsivitas */
+@media (max-width: 991.98px) {
+    .wt-hero-static {
+        min-height: auto;
+        padding-bottom: 80px;
+    }
+    .hero-main-logo {
+        max-width: 280px;
+    }
+    .hero-bg-overlay {
+        /* Di mobile, buat overlay hitam merata agar teks putih terbaca */
+        background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                          url('assets/fe/portofolio/hero2.png');
+    }
+}
+
+
+/* ================= SERVICES SECTION STYLES ================= */
+/* Padding standar untuk section */
+.wt-section-padding {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+/* Style Kartu Service */
+.wt-service-card {
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05); /* Border sangat halus */
+    z-index: 1;
+}
+
+/* Efek Hover saat kursor di atas kartu */
+.wt-service-card:hover {
+    transform: translateY(-10px); /* Kartu naik sedikit */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important; /* Bayangan lebih besar */
+    border-color: var(--wt-orange); /* Border berubah jadi oranye */
+}
+
+/* Nomor Besar di Belakang */
+.service-number-bg {
+    position: absolute;
+    top: -20px;
+    right: -10px;
+    font-size: 8rem;
+    font-weight: 900;
+    color: rgba(0,0,0,0.03); /* Sangat transparan agar tidak mengganggu */
+    line-height: 1;
+    z-index: -1; /* Di belakang konten lain */
+    transition: all 0.3s ease;
+}
+
+.wt-service-card:hover .service-number-bg {
+    color: rgba(255, 153, 0, 0.1); /* Berubah jadi oranye transparan saat hover */
+    transform: scale(1.1); /* Sedikit membesar */
+}
+
+/* Wrapper Ikon agar tingginya konsisten */
+.service-icon-wrapper {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.service-icon-wrapper img {
+    max-height: 100%;
+    width: auto;
+}
+
+/* Typography */
+.wt-service-card h4 {
+    font-size: 1.25rem;
+}
+.wt-service-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Helper Classes untuk Animasi & Jarak (jika belum ada) */
+.tracking-wider { letter-spacing: 0.1em; }
+.animate-fade-in-up { animation: fadeInUp 0.8s forwards ease-out; opacity: 0; transform: translateY(30px); }
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+.delay-4 { animation-delay: 0.8s; }
+
+@keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+/* ================= FIX OVERLAP VIDEO (NO GAP) ================= */
+
+/* 1. HERO SECTION (Layer Paling Bawah) */
+.wt-hero-static {
+    position: relative;
+    z-index: 20 !important; /* Layer paling bawah */
+    overflow: visible !important; /* Biar video bisa nonjol keluar */
+    /* Matikan min-height 100vh jika terlalu tinggi, ganti secukupnya */
+    min-height: 80vh; 
+    padding-bottom: 50px;
+}
+
+/* 2. SERVICES SECTION (Layer Tengah) */
+#ourServices {
+    position: relative;
+    z-index: 5; /* Di atas Hero, supaya background putihnya nutupin hero hitam */
+    padding-top: 70px !important; /* Ruang untuk video yang nonjol */
+}
+
+/* 3. VIDEO CONTAINER (Layer Paling Atas & Penarik Layout) */
+.video-overlap {
+    position: relative;
+    z-index: 10!important; /* Harus paling tinggi biar gak ketutup section bawah */
+    
+    /* HAPUS transform yang bikin gap jauh */
+    transform: none !important; 
+    
+    margin-bottom: -72%; 
+}
+
+/* 4. Reset untuk HP (Mobile) */
+@media (max-width: 991.98px) {
+    .video-overlap {
+        margin-bottom: 30px; /* Reset margin di HP */
+    }
+    
+    #ourServices {
+        padding-top: 80px !important; /* Reset padding di HP */
+    }
+}
+/* ================= WHY CHOOSE US STYLES ================= */
+.wt-img-frame {
+    position: relative;
+    /* border: 10px solid #f8f9fa; */
+    transition: transform 0.3s ease;
+}
+
+.wt-img-frame:hover {
+    transform: scale(1.02);
+}
+
+/* Card Benefit Modern */
+.wt-benefit-card {
+    transition: all 0.3s ease;
+    border-bottom: 4px solid transparent !important;
+}
+
+.wt-benefit-card:hover {
+    background-color: #fff !important;
+    transform: translateY(-8px);
+    box-shadow: 0 1rem 3rem rgba(0,0,0,0.1) !important;
+    border-bottom: 4px solid var(--wt-orange) !important;
+}
+
+.wt-benefit-card .icon-box {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 153, 0, 0.1); /* Background oranye sangat tipis */
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.wt-benefit-card:hover .icon-box {
+    background-color: var(--wt-orange);
+    color: #fff !important;
+}
+
+/* Typography Adjustments */
+.wt-benefit-card h5 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+}
+
+.wt-benefit-card p.small {
+    line-height: 1.6;
+}
+
+/* Responsivitas */
+@media (max-width: 991.98px) {
+    .wt-section-padding {
+        padding: 60px 0;
+    }
+    .wt-benefit-card {
+        text-align: center;
+    }
+    .wt-benefit-card .icon-box {
+        margin: 0 auto 1rem;
+    }
+}
+
+/* ================= CAPABILITIES CARD STYLES ================= */
+.wt-cap-card {
+    position: relative;
+    background-color: #fff;
+    border-radius: 15px;
+    height: 180px; /* Tinggi tetap untuk estetika */
+    overflow: hidden; /* Memastikan overlay tidak keluar dari kartu */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+/* Bagian Depan Kartu */
+.card-front {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.icon-circle {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(255, 153, 0, 0.1);
+    color: var(--wt-orange);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+/* Overlay Deskripsi (Muncul saat Hover) */
+.card-overlay {
+    position: absolute;
+    top: 100%; /* Sembunyi di bawah kartu */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--wt-orange);
+    color: #fff;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Efek membal (bounce) */
+    z-index: 2;
+}
+
+/* Animasi saat Hover */
+.wt-cap-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(255, 153, 0, 0.2);
+}
+
+.wt-cap-card:hover .card-overlay {
+    top: 0; /* Slide up ke atas */
+}
+
+.wt-cap-card:hover .card-front {
+    opacity: 0; /* Menghilangkan tampilan depan saat overlay aktif */
+}
+
+/* Responsivitas untuk Mobile */
+@media (max-width: 991.98px) {
+    .wt-cap-card {
+        height: 160px;
+    }
+    /* Di mobile, buat overlay muncul separuh atau kurangi animasi agar user friendly */
+}
+
+/* ================= CLIENTS REDESIGN STYLES ================= */
+.wt-client-card {
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+    border: 1px solid transparent;
+}
+
+/* Animasi Hover Kartu */
+.wt-client-card:hover {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transform: translateY(-5px);
+    border-color: rgba(255, 153, 0, 0.2);
+}
+
+.client-logo {
+    max-width: 100%;
+    max-height: 100px; /* Ukuran seragam */
+    width: auto;
+    /* filter: grayscale(100%);  */
+    /* opacity: 0.5; */
+    transition: all 0.4s ease;
+}
+
+/* Animasi Hover Logo */
+.wt-client-card:hover .client-logo {
+    /* filter: grayscale(0%);  */
+    /* opacity: 1; */
+    transform: scale(1.1);
+}
+
+/* Responsivitas Mobile */
+@media (max-width: 576px) {
+    .wt-client-card {
+        padding: 10px;
+        height: 80px;
+    }
+    .client-logo {
+        max-height: 35px;
+    }
+}
+
+/* ================= DYNAMIC PORTFOLIO STYLES ================= */
+
+/* Mengatur tinggi sel grid agar seragam */
+.portfolio-grid-cell {
+    /* Tinggi tetap untuk desktop agar terlihat rapi seperti 'tembok' gambar */
+    height: 350px; 
+    overflow: hidden; /* Mencegah gambar keluar dari container */
+    position: relative;
+    background-color: #212529; /* Placeholder color saat gambar loading */
+}
+
+/* Gaya untuk gambar di dalam grid */
+.portfolio-grid-img {
+    width: 100%;
+    height: 100%;
+    /* KUNCI: memastikan gambar memenuhi kotak tanpa terdistorsi (terpotong jika perlu) */
+    object-fit: cover; 
+    object-position: center;
+    transition: transform 0.8s ease, opacity 0.5s ease-in-out;
+    opacity: 0; /* Mulai dengan invisible untuk efek fade-in JS */
+}
+
+/* Efek Hover halus */
+.portfolio-grid-cell:hover .portfolio-grid-img {
+    transform: scale(1.05); /* Zoom in sedikit saat hover */
+}
+
+/* Class utility untuk animasi fade-in saat gambar berganti */
+.fade-in-active {
+    opacity: 1 !important;
+}
+
+/* Responsivitas: Menyesuaikan tinggi pada layar yang lebih kecil */
+@media (max-width: 991.98px) {
+    .portfolio-grid-cell {
+        height: 300px; /* Sedikit lebih pendek di tablet */
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio-grid-cell {
+        height: 250px; /* Lebih pendek di mobile */
+    }
+}
+
+/* ================= BRANDING SECTION STYLES ================= */
+
+/* Garis Aksen Oranye di sebelah sub-judul */
+.wt-line-accent {
+    width: 40px;
+    height: 3px;
+    background-color: var(--wt-orange);
+    border-radius: 2px;
+}
+
+/* Wrapper Gambar untuk efek tumpuk (opsional) */
+.wt-image-wrapper {
+    position: relative;
+    z-index: 2;
+}
+
+.wt-image-wrapper img {
+    width: 100%;
+    /* Efek hover halus pada gambar */
+    transition: transform 0.5s ease;
+}
+
+.wt-image-wrapper:hover img {
+    transform: scale(1.02);
+}
+
+/* Blob/Lingkaran dekorasi di belakang gambar (Aksen Visual) */
+.wt-blob-accent {
+    position: absolute;
+    bottom: -20px;
+    left: -20px;
+    width: 150px;
+    height: 150px;
+    background-color: rgba(255, 153, 0, 0.1); /* Oranye transparan */
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.wt-blob-accent.blob-right {
+    left: auto;
+    right: -20px;
+    top: -20px;
+    bottom: auto;
+}
+
+/* Typography Tweaks */
+.lead {
+    font-weight: 400;
+    line-height: 1.8;
+}
+
+/* Pastikan section punya jarak nafas yang cukup */
+.wt-section-padding {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.wt-line-accent-new {
+    width: 50px;          /* Atur panjang garis sesuai selera */
+    height: 3px;          /* Ketebalan garis */
+    background-color: #ffc107; /* Warna orange/warning */
+    border-radius: 10px;  /* Supaya ujung garis agak bulat */
+    display: inline-block;
+}
+
+@media (max-width: 991.98px) {
+    .wt-section-padding {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    
+    /* Reset padding di mobile */
+    .ps-lg-5, .pe-lg-5 {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+}
+
+/* ================= ORANGE VIDEO SECTION STYLES ================= */
+
+.wt-orange-video-section {
+    margin-top: 14%;
+    background-color: white; /* Warna Oranye Branding */
+    width: 100%;
+    position: relative;
+    
+    padding: 50px 0; 
+}
+
+.wt-full-video-wrapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    line-height: 0; /* Menghilangkan gap putih kecil di bawah video */
+}
+
+.wt-video-fluid {
+    width: 100%;        /* Full Kanan-Kiri */
+    height: auto;       /* Tinggi menyesuaikan otomatis (Responsive) */
+    display: block;     /* Agar tidak ada margin bawaan inline element */
+    object-fit: cover;  /* Memastikan video menutupi area dengan rapi */
+}
+
+/* Responsif untuk Mobile */
+@media (max-width: 768px) {
+    .wt-orange-video-section {
+        /* Di HP mungkin paddingnya dikecilkan sedikit */
+        padding: 30px 0; 
+    }
+}
+.map-container iframe {
+    width: 100%;        /* Memenuhi lebar kolom */
+    height: 240px;      /* Atur tinggi peta sesuai keinginan */
+    border-radius: 8px; /* Opsional: Biar ujungnya agak melengkung */
+    display: block;
+}
