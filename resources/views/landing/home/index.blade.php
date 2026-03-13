@@ -62,7 +62,7 @@
 
                     <div class="wt-cta-pill d-flex align-items-center">
                         <span class="phone-number me-3 fw-bold">+62 822 1000 8380</span>
-                        <a href="wa.me/6282210008380"
+                        <a href="https://wa.me/6282210008380"
                             class="btn btn-warning wt-btn-order text-uppercase fw-bold">Order</a>
                     </div>
                 </div>
@@ -491,7 +491,7 @@
                 <div class="container">
                     <div class="row mb-5 justify-content-center">
                         <div class="col-lg-8 text-center">
-                            <h5 class="text-warning text-uppercase fw-bold tracking-wider mb-2">Our Partnership</h5>
+                            <h5 class="text-warning text-uppercase fw-bold tracking-wider mb-2">Our Clients</h5>
                             <h2 class="fw-bold display-6">Klien Terpercaya Kami</h2>
                             <div class="wt-separator mx-auto"></div>
                             <p class="text-muted mt-3">Dipercaya oleh berbagai perusahaan nasional hingga
