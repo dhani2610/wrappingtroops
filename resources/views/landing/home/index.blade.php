@@ -562,7 +562,7 @@
                     <div class="row align-items-center mb-5 pb-lg-5">
                         <div class="col-lg-6 mb-4 mb-lg-0 animate-fade-in-up">
                             <div class="wt-image-wrapper">
-                                <img src="{{ asset('assets-landing/fe/portofolio/Klien UMKM.jpg') }}"
+                                <img src="{{ asset('assets-landing/fe/portofolio/Klien UMKM.webp') }}"
                                     alt="Stiker Branding Mobil" class="img-fluid rounded-4 shadow-lg">
                                 <div class="wt-blob-accent"></div>
                             </div>
@@ -613,7 +613,7 @@
 
                         <div class="col-lg-6 order-1 order-lg-2 mb-4 mb-lg-0 animate-fade-in-up delay-1">
                             <div class="wt-image-wrapper">
-                                <img src="{{ asset('assets-landing/fe/portofolio/Pasang-Kering.jpg') }}"
+                                <img src="{{ asset('assets-landing/fe/portofolio/Pasang-Kering.webp') }}"
                                     alt="Jenis Mobil Branding" class="img-fluid rounded-4 shadow-lg">
                                 <div class="wt-blob-accent blob-right"></div>
                             </div>
@@ -628,7 +628,7 @@
                     <div class="row align-items-center mb-5 pb-lg-5">
                         <div class="col-lg-6 mb-4 mb-lg-0 animate-fade-in-up">
                             <div class="wt-image-wrapper">
-                                <img src="{{ asset('assets-landing/fe/portofolio/Event-Internasional.jpg') }}"
+                                <img src="{{ asset('assets-landing/fe/portofolio/Event-Internasional.webp') }}"
                                     alt="Neon Box Race Control" class="img-fluid rounded-4 shadow-lg">
                                 <div class="wt-blob-accent"></div>
                             </div>
@@ -691,7 +691,7 @@
 
                         <div class="col-lg-6 order-1 order-lg-2 mb-4 mb-lg-0 animate-fade-in-up delay-1">
                             <div class="wt-image-wrapper">
-                                <img src="{{ asset('assets-landing/fe/portofolio/IMG-20220126-WA0009.jpg') }}"
+                                <img src="{{ asset('assets-landing/fe/portofolio/IMG-20220126-WA0009.webp') }}"
                                     alt="Digital Printing Indoor" class="img-fluid rounded-4 shadow-lg">
                                 <div class="wt-blob-accent blob-right"></div>
                             </div>
