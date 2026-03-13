@@ -140,6 +140,8 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('print/{id}', 'Backend\AssignmentController@print')->name('assignment.print');
     });
 
+    Route::get('/portofolio/generate', [App\Http\Controllers\Backend\PortofolioController::class, 'generate'])->name('portofolio.generate');
+    Route::get('/klien/generate', [App\Http\Controllers\Backend\KlienController::class, 'generate'])->name('klien.generate');
     // TRANSAKTION
     Route::post('/getCustomerDetails', 'Backend\QuotationController@getCustomerDetails')->name('getCustomerDetails');
     Route::post('/getProjectByCustomer/{id}', 'Backend\ActivityController@getProjectByCustomer')->name('getProjectByCustomer');

@@ -5,7 +5,7 @@
     left: 0;
     width: 100%;
     height: 100vh;
-    z-index: 0; 
+    z-index: 0;
     overflow: hidden;
     background-color: #000; /* Latar belakang hitam pekat */
     display: flex;
@@ -20,10 +20,10 @@
     height: 400px; */
     border-radius: 20px;
     overflow: hidden;
-    
+
     transform-origin: center center;
     will-change: transform;
-    
+
     animation: slideInFromLeft 5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
 
@@ -67,9 +67,9 @@
     z-index: 20;
     margin-top: 100vh; /* Tetap didorong ke bawah */
     background-color: #f4f4f4;
-    
+
     /* KUNCI FADE IN: Awalnya transparan */
-    opacity: 0; 
+    opacity: 0;
     pointer-events: none; /* Agar tidak bisa diklik saat transparan */
     transition: opacity 0.8s ease-in-out; /* Efek muncul halus */
 }
@@ -258,7 +258,7 @@ body {
 @media (max-width: 991.98px) {
     .wt-navbar-redesign {
         /* Di HP, sebaiknya langsung hitam atau gelap agar menu terlihat jelas */
-        background-color: rgba(0, 0, 0, 0.9) !important; 
+        background-color: rgba(0, 0, 0, 0.9) !important;
         padding-top: 10px;
         padding-bottom: 10px;
     }
@@ -277,7 +277,7 @@ body {
 
 /* ================= NAVBAR STYLES ================= */
 .wt-navbar {
-    /* Opsional: Jika ingin background ada tekstur halus seperti gambar asli, 
+    /* Opsional: Jika ingin background ada tekstur halus seperti gambar asli,
        gunakan background-image di sini dengan overlay gelap */
     background: linear-gradient(rgba(33, 37, 41, 0.95), rgba(33, 37, 41, 0.95));
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
@@ -372,7 +372,7 @@ body {
     width: auto;
     float: right;
     /* Margin negatif agar menyembul ke atas */
-    margin-bottom: -60px; 
+    margin-bottom: -60px;
     /* Filter drop-shadow agar outline putih terlihat jelas di background gelap */
     filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.2));
 }
@@ -409,13 +409,13 @@ body {
     bottom: 210px;   /* Jarak dari bawah */
     right: 76px;    /* Jarak dari kanan */
     z-index: 99;
-    
+
     /* Membuat tombol jadi lingkaran */
-    width: 50px;    
+    width: 50px;
     height: 50px;
     border-radius: 50%;
     padding: 0;     /* Hapus padding agar bisa di-center dengan flex */
-    
+
     border: none;
     outline: none;
     background-color: transparent;
@@ -425,7 +425,7 @@ body {
     /* Mengetengahkan Gambar */
     align-items: center;
     justify-content: center;
-    /* Note: Tambahkan display: flex di JS saat tombol muncul, 
+    /* Note: Tambahkan display: flex di JS saat tombol muncul,
        atau biarkan default tapi pastikan img di tengah */
 }
 
@@ -458,7 +458,7 @@ body {
     width: 100%;
     height: 137%;
     /* Gunakan gambar jembatan dari desain lama Anda */
-    background-image: url('assets/fe/portofolio/hero2.png'); 
+    background-image: url('fe/portofolio/hero2.png');
     background-size: cover;
     background-position: center;
     z-index: 1;
@@ -522,7 +522,7 @@ body {
     }
     .hero-bg-overlay {
         /* Di mobile, buat overlay hitam merata agar teks putih terbaca */
-        background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+        background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
                           url('assets/fe/portofolio/hero2.png');
     }
 }
@@ -605,7 +605,7 @@ body {
     z-index: 20 !important; /* Layer paling bawah */
     overflow: visible !important; /* Biar video bisa nonjol keluar */
     /* Matikan min-height 100vh jika terlalu tinggi, ganti secukupnya */
-    min-height: 80vh; 
+    min-height: 80vh;
     padding-bottom: 50px;
 }
 
@@ -620,11 +620,11 @@ body {
 .video-overlap {
     position: relative;
     z-index: 10!important; /* Harus paling tinggi biar gak ketutup section bawah */
-    
+
     /* HAPUS transform yang bikin gap jauh */
-    transform: none !important; 
-    
-    margin-bottom: -72%; 
+    transform: none !important;
+
+    margin-bottom: -72%;
 }
 
 /* 4. Reset untuk HP (Mobile) */
@@ -632,7 +632,7 @@ body {
     .video-overlap {
         margin-bottom: 30px; /* Reset margin di HP */
     }
-    
+
     #ourServices {
         padding-top: 80px !important; /* Reset padding di HP */
     }
@@ -822,7 +822,7 @@ body {
 /* Mengatur tinggi sel grid agar seragam */
 .portfolio-grid-cell {
     /* Tinggi tetap untuk desktop agar terlihat rapi seperti 'tembok' gambar */
-    height: 350px; 
+    height: 350px;
     overflow: hidden; /* Mencegah gambar keluar dari container */
     position: relative;
     background-color: #212529; /* Placeholder color saat gambar loading */
@@ -833,7 +833,7 @@ body {
     width: 100%;
     height: 100%;
     /* KUNCI: memastikan gambar memenuhi kotak tanpa terdistorsi (terpotong jika perlu) */
-    object-fit: cover; 
+    object-fit: cover;
     object-position: center;
     transition: transform 0.8s ease, opacity 0.5s ease-in-out;
     opacity: 0; /* Mulai dengan invisible untuk efek fade-in JS */
@@ -932,7 +932,7 @@ body {
         padding-top: 60px;
         padding-bottom: 60px;
     }
-    
+
     /* Reset padding di mobile */
     .ps-lg-5, .pe-lg-5 {
         padding-left: 0 !important;
@@ -947,8 +947,8 @@ body {
     background-color: white; /* Warna Oranye Branding */
     width: 100%;
     position: relative;
-    
-    padding: 50px 0; 
+
+    padding: 50px 0;
 }
 
 .wt-full-video-wrapper {
@@ -969,7 +969,7 @@ body {
 @media (max-width: 768px) {
     .wt-orange-video-section {
         /* Di HP mungkin paddingnya dikecilkan sedikit */
-        padding: 30px 0; 
+        padding: 30px 0;
     }
 }
 .map-container iframe {

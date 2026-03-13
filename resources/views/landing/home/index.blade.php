@@ -18,7 +18,7 @@
 
         <div class="intro-video-container">
             <video autoplay muted loop playsinline id="hero-video">
-                <source src="{{ asset('assets-landing/first/Logo Maskot Lari.mp4')}}" type="video/mp4">
+                <source src="{{ asset('assets-landing/first/Logo Maskot Lari.mp4') }}" type="video/mp4">
                 Browser Anda tidak mendukung video.
             </video>
             <div class="video-overlay"></div>
@@ -35,7 +35,8 @@
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark wt-navbar-redesign transition-all hidden-nav">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="{{ asset('assets-landing/fe/Wrappingtroops logo.png')}}" alt="Wrapping Troops Logo" height="55">
+                <img src="{{ asset('assets-landing/fe/Wrappingtroops logo.png') }}" alt="Wrapping Troops Logo"
+                    height="55">
             </a>
 
             <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas"
@@ -61,7 +62,8 @@
 
                     <div class="wt-cta-pill d-flex align-items-center">
                         <span class="phone-number me-3 fw-bold">+62 822 1000 8380</span>
-                        <a href="wa.me/6282210008380" class="btn btn-warning wt-btn-order text-uppercase fw-bold">Order</a>
+                        <a href="wa.me/6282210008380"
+                            class="btn btn-warning wt-btn-order text-uppercase fw-bold">Order</a>
                     </div>
                 </div>
             </div>
@@ -79,8 +81,8 @@
                         <div class="col-lg-12 text-white text-center text-lg-start py-5">
                             <div class="hero-logo-wrapper mb-4 animate-fade-in-up">
                                 <center>
-                                    <img src="{{ asset('assets-landing/fe/Logo Panjang.png')}}" alt="Wrapping Troops Logo"
-                                        class="img-fluid hero-main-logo">
+                                    <img src="{{ asset('assets-landing/fe/Logo Panjang.png') }}"
+                                        alt="Wrapping Troops Logo" class="img-fluid hero-main-logo">
                                 </center>
                             </div>
                         </div>
@@ -92,16 +94,18 @@
             <section class="wt-orange-video-section">
                 <div class="container-fluid p-0">
                     <div class="wt-full-video-wrapper">
-                        <video autoplay muted loop playsinline class="wt-video-fluid">
-                            <source src="{{ asset('assets-landing/fe/MAH04964.mp4')}}" type="video/mp4">
-                            Browser Anda tidak mendukung video.
-                        </video>
+                        <iframe class="wt-video-fluid"
+                            src="https://www.youtube.com/embed/K7ShUN8OdIs?autoplay=1&mute=1&loop=1&playlist=K7ShUN8OdIs&playsinline=1&controls=0&rel=0"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen style="width: 100%; min-height: 100vh; pointer-events: none;">
+                        </iframe>
                     </div>
                 </div>
             </section>
 
             <section id="whyChooseUs" class="wt-section-padding" style="background-color: #FF9900;">
-                <div class="container" >
+                <div class="container">
                     <div class="row align-items-center mb-5 pb-lg-4">
                         <div class="col-lg-6 mb-4 mb-lg-0 animate-fade-in-up">
                             <div class="pe-lg-5">
@@ -131,16 +135,16 @@
                         </div>
                         <div class="col-lg-6 animate-fade-in-right" style="background-color: #FF9900;">
                             <div class="wt-img-frame rounded-4 overflow-hidden">
-                                <img src="{{ asset('assets-landing/fe/Foto Website/kenapa-pilih.png')}}" alt="Wrapping Troops Vehicle"
-                                    class="img-fluid">
+                                <img src="{{ asset('assets-landing/fe/Foto Website/kenapa-pilih.png') }}"
+                                    alt="Wrapping Troops Vehicle" class="img-fluid">
                             </div>
                         </div>
                     </div>
 
                 </div>
             </section>
-            <section id="whyChooseUs" class="wt-section-padding bg-light" >
-                <div class="container" >
+            <section id="whyChooseUs" class="wt-section-padding bg-light">
+                <div class="container">
                     <div class="row g-4 justify-content-center">
                         <div class="col-lg-4 col-md-6">
                             <div class="wt-benefit-card p-4 h-100 border-0 shadow-sm rounded-4 bg-light">
@@ -167,7 +171,8 @@
                             <div class="wt-benefit-card p-4 h-100 border-0 shadow-sm rounded-4 bg-light">
                                 <div class="icon-box mb-3 text-warning"><i class="fas fa-building fa-2x"></i></div>
                                 <h5 class="fw-bold">Segala Skala Bisnis</h5>
-                                <p class="small text-muted mb-0">Melayani klien dari UMKM hingga perusahaan besar dengan
+                                <p class="small text-muted mb-0">Melayani klien dari UMKM hingga perusahaan besar
+                                    dengan
                                     loyalitas tinggi.</p>
                             </div>
                         </div>
@@ -193,7 +198,8 @@
 
                         <div class="col-lg-4 col-md-6">
                             <div class="wt-benefit-card p-4 h-100 border-0 shadow-sm rounded-4 bg-light">
-                                <div class="icon-box mb-3 text-warning"><i class="fas fa-truck-pickup fa-2x"></i></div>
+                                <div class="icon-box mb-3 text-warning"><i class="fas fa-truck-pickup fa-2x"></i>
+                                </div>
                                 <h5 class="fw-bold">Home Service & Survey</h5>
                                 <p class="small text-muted mb-0">Layanan pasang di tempat (home service) dan
                                     survey/pengukuran gratis untuk Anda.</p>
@@ -203,7 +209,7 @@
                 </div>
             </section>
 
-             <section id="dynamicPortfolio" style="background : #f4f4f4" class=" overflow-hidden">
+            <section id="dynamicPortfolio" style="background : #f4f4f4" class=" overflow-hidden">
                 <div class="container py-5 text-center text-white animate-fade-in-up">
                     <h5 class="text-warning text-uppercase fw-bold tracking-wider mb-2">Our Work</h5>
                     <h2 class="fw-bold display-6" style="color: black;">Portofolio</h2>
@@ -247,7 +253,8 @@
                 </div>
             </section>
 
-            <section id="ourServices" class="wt-section-padding" style="background : #FF9900" class=" overflow-hidden">
+            <section id="ourServices" class="wt-section-padding" style="background : #FF9900"
+                class=" overflow-hidden">
                 <div class="container">
                     <div class="row mb-5">
                         <div class="col-12 text-center animate-fade-in-up">
@@ -263,7 +270,8 @@
                                 class="wt-service-card h-100 text-center p-4 rounded-4 bg-white shadow-sm position-relative overflow-hidden">
                                 <div class="service-number-bg">01</div>
                                 <div class="service-icon-wrapper mb-4">
-                                    <img src="{{ asset('assets-landing/img/logo-nav.png')}}" alt="Icon" class="img-fluid" height="60">
+                                    <img src="{{ asset('assets-landing/img/logo-nav.png') }}" alt="Icon"
+                                        class="img-fluid" height="60">
                                 </div>
                                 <h4 class="fw-bold text-warning mb-3">Vinyl Applicator</h4>
                                 <p class="text-muted mb-0">
@@ -277,7 +285,8 @@
                                 class="wt-service-card h-100 text-center p-4 rounded-4 bg-white shadow-sm position-relative overflow-hidden">
                                 <div class="service-number-bg">02</div>
                                 <div class="service-icon-wrapper mb-4">
-                                    <img src="{{ asset('assets-landing/img/logo-nav.png')}}" alt="Icon" class="img-fluid" height="60">
+                                    <img src="{{ asset('assets-landing/img/logo-nav.png') }}" alt="Icon"
+                                        class="img-fluid" height="60">
                                 </div>
                                 <h4 class="fw-bold text-warning mb-3">Graphic Design</h4>
                                 <p class="text-muted mb-0">
@@ -287,12 +296,14 @@
                         </div>
 
                         <div class="col-lg-3 col-md-6 animate-fade-in-up delay-3">
-                            <a href="https://satuprinting.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+                            <a href="https://satuprinting.com" target="_blank" rel="noopener noreferrer"
+                                style="text-decoration: none;">
                                 <div
                                     class="wt-service-card h-100 text-center p-4 rounded-4 bg-white shadow-sm position-relative overflow-hidden">
                                     <div class="service-number-bg">03</div>
                                     <div class="service-icon-wrapper mb-4">
-                                        <img src="{{ asset('assets-landing/img/logo-nav.png')}}" alt="Icon" class="img-fluid" height="60">
+                                        <img src="{{ asset('assets-landing/img/logo-nav.png') }}" alt="Icon"
+                                            class="img-fluid" height="60">
                                     </div>
                                     <h4 class="fw-bold text-warning mb-3">Printing</h4>
                                     <p class="text-muted mb-0">
@@ -303,19 +314,21 @@
                         </div>
 
                         <div class="col-lg-3 col-md-6 animate-fade-in-up delay-4">
-                            <a href="https://iklanjalan.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+                            <a href="https://iklanjalan.com" target="_blank" rel="noopener noreferrer"
+                                style="text-decoration: none;">
 
-                            <div
-                                class="wt-service-card h-100 text-center p-4 rounded-4 bg-white shadow-sm position-relative overflow-hidden">
-                                <div class="service-number-bg">04</div>
-                                <div class="service-icon-wrapper mb-4">
-                                    <img src="{{ asset('assets-landing/img/logo-nav.png')}}" alt="Icon" class="img-fluid" height="60">
+                                <div
+                                    class="wt-service-card h-100 text-center p-4 rounded-4 bg-white shadow-sm position-relative overflow-hidden">
+                                    <div class="service-number-bg">04</div>
+                                    <div class="service-icon-wrapper mb-4">
+                                        <img src="{{ asset('assets-landing/img/logo-nav.png') }}" alt="Icon"
+                                            class="img-fluid" height="60">
+                                    </div>
+                                    <h4 class="fw-bold text-warning mb-3">Advertising</h4>
+                                    <p class="text-muted mb-0">
+                                        Pemasangan Iklan Reklame Outdoor dan Indoor.
+                                    </p>
                                 </div>
-                                <h4 class="fw-bold text-warning mb-3">Advertising</h4>
-                                <p class="text-muted mb-0">
-                                    Pemasangan Iklan Reklame Outdoor dan Indoor.
-                                </p>
-                            </div>
                             </a>
                         </div>
 
@@ -409,7 +422,8 @@
                                     <h6 class="fw-bold mb-0">Video & Animasi</h6>
                                 </div>
                                 <div class="card-overlay p-3 d-flex align-items-center text-center">
-                                    <p class="small mb-0">Produksi konten video kreatif dan animasi untuk promosi bisnis
+                                    <p class="small mb-0">Produksi konten video kreatif dan animasi untuk promosi
+                                        bisnis
                                         Anda.</p>
                                 </div>
                             </div>
@@ -463,7 +477,8 @@
                                     <h6 class="fw-bold mb-0">Sewa LED Screen</h6>
                                 </div>
                                 <div class="card-overlay p-3 d-flex align-items-center text-center">
-                                    <p class="small mb-0">Persewaan layar LED besar untuk berbagai kebutuhan event Anda.
+                                    <p class="small mb-0">Persewaan layar LED besar untuk berbagai kebutuhan event
+                                        Anda.
                                     </p>
                                 </div>
                             </div>
@@ -479,7 +494,8 @@
                             <h5 class="text-warning text-uppercase fw-bold tracking-wider mb-2">Our Partnership</h5>
                             <h2 class="fw-bold display-6">Klien Terpercaya Kami</h2>
                             <div class="wt-separator mx-auto"></div>
-                            <p class="text-muted mt-3">Dipercaya oleh berbagai perusahaan nasional hingga multinasional.
+                            <p class="text-muted mt-3">Dipercaya oleh berbagai perusahaan nasional hingga
+                                multinasional.
                             </p>
                         </div>
                     </div>
@@ -488,13 +504,52 @@
                         class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-4 align-items-center justify-content-center">
 
                         @foreach ($klien as $index => $k)
-                        <div class="col">
-                            <div class="wt-client-card"><img src="{{ asset('assets/img/klien/' . $k->image) }}" alt="{{ $k->title }}"
-                                    class="client-logo">
+                            <div class="col">
+                                <div class="wt-client-card"><img src="{{ asset('assets/img/klien/' . $k->image) }}"
+                                        alt="{{ $k->title }}" class="client-logo">
+                                </div>
                             </div>
-                        </div>
                         @endforeach
 
+
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="wt-section-padding bg-white " style="padding-top: 10px!important;">
+                <div class="container">
+                    <!-- <div class="row mb-5 justify-content-center">
+                        <div class="col-lg-8 text-center">
+                            <h2 class="fw-bold display-6">MY TEAM</h2>
+                        </div>
+                    </div> -->
+                    <div class="d-flex justify-content-center align-items-center mb-4">
+
+                        <div class="wt-line-accent-new me-3"></div>
+
+                        <h5 class="text-warning text-uppercase fw-bold m-0 tracking-wider">
+                            OUR TEAM
+                        </h5>
+
+                        <div class="wt-line-accent-new ms-3"></div>
+
+                    </div>
+                    <div class="row g-4">
+
+                        <div class="col-md-6 col-12 animate-fade-in-up">
+                            <div class="wt-image-wrapper position-relative overflow-hidden rounded-4 shadow-lg">
+                                <img src="{{ asset('assets-landing/img/tim/team1.jpeg') }}" alt="Foto Kiri"
+                                    class="img-fluid w-100" style="heipalight: 400px; object-fit: cover;">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-12 animate-fade-in-up delay-1">
+                            <div class="wt-image-wrapper position-relative overflow-hidden rounded-4 shadow-lg">
+                                <img src="{{ asset('assets-landing/img/tim/team2.jpeg') }}" alt="Foto Kanan"
+                                    class="img-fluid w-100" style="height: 400px; object-fit: cover;">
+                            </div>
+                        </div>
 
                     </div>
                 </div>
@@ -507,8 +562,8 @@
                     <div class="row align-items-center mb-5 pb-lg-5">
                         <div class="col-lg-6 mb-4 mb-lg-0 animate-fade-in-up">
                             <div class="wt-image-wrapper">
-                                <img src="{{ asset('assets-landing/fe/portofolio/Klien UMKM.jpg')}}" alt="Stiker Branding Mobil"
-                                    class="img-fluid rounded-4 shadow-lg">
+                                <img src="{{ asset('assets-landing/fe/portofolio/Klien UMKM.jpg') }}"
+                                    alt="Stiker Branding Mobil" class="img-fluid rounded-4 shadow-lg">
                                 <div class="wt-blob-accent"></div>
                             </div>
                         </div>
@@ -558,8 +613,8 @@
 
                         <div class="col-lg-6 order-1 order-lg-2 mb-4 mb-lg-0 animate-fade-in-up delay-1">
                             <div class="wt-image-wrapper">
-                                <img src="{{ asset('assets-landing/fe/portofolio/Pasang-Kering.jpg')}}" alt="Jenis Mobil Branding"
-                                    class="img-fluid rounded-4 shadow-lg">
+                                <img src="{{ asset('assets-landing/fe/portofolio/Pasang-Kering.jpg') }}"
+                                    alt="Jenis Mobil Branding" class="img-fluid rounded-4 shadow-lg">
                                 <div class="wt-blob-accent blob-right"></div>
                             </div>
                         </div>
@@ -573,8 +628,8 @@
                     <div class="row align-items-center mb-5 pb-lg-5">
                         <div class="col-lg-6 mb-4 mb-lg-0 animate-fade-in-up">
                             <div class="wt-image-wrapper">
-                                <img src="{{ asset('assets-landing/fe/portofolio/Event-Internasional.jpg')}}" alt="Neon Box Race Control"
-                                    class="img-fluid rounded-4 shadow-lg">
+                                <img src="{{ asset('assets-landing/fe/portofolio/Event-Internasional.jpg') }}"
+                                    alt="Neon Box Race Control" class="img-fluid rounded-4 shadow-lg">
                                 <div class="wt-blob-accent"></div>
                             </div>
                         </div>
@@ -636,7 +691,7 @@
 
                         <div class="col-lg-6 order-1 order-lg-2 mb-4 mb-lg-0 animate-fade-in-up delay-1">
                             <div class="wt-image-wrapper">
-                                <img src="{{ asset('assets-landing/fe/portofolio/IMG-20220126-WA0009.jpg')}}"
+                                <img src="{{ asset('assets-landing/fe/portofolio/IMG-20220126-WA0009.jpg') }}"
                                     alt="Digital Printing Indoor" class="img-fluid rounded-4 shadow-lg">
                                 <div class="wt-blob-accent blob-right"></div>
                             </div>
@@ -646,47 +701,6 @@
                 </div>
             </section>
 
-            <section class="wt-section-padding bg-white " style="padding-top: 10px!important;">
-                <div class="container">
-                     <!-- <div class="row mb-5 justify-content-center">
-                        <div class="col-lg-8 text-center">
-                            <h2 class="fw-bold display-6">MY TEAM</h2>
-                        </div>
-                    </div> -->
-                    <div class="d-flex justify-content-center align-items-center mb-4">
-
-                        <div class="wt-line-accent-new me-3"></div>
-
-                        <h5 class="text-warning text-uppercase fw-bold m-0 tracking-wider">
-                            OUR TEAM
-                        </h5>
-
-                        <div class="wt-line-accent-new ms-3"></div>
-
-                    </div>
-                    <div class="row g-4">
-
-                        <div class="col-md-6 col-12 animate-fade-in-up">
-                            <div class="wt-image-wrapper position-relative overflow-hidden rounded-4 shadow-lg">
-                                <img src="{{ asset('assets-landing/img/tim/team1.jpeg')}}"
-                                        alt="Foto Kiri"
-                                        class="img-fluid w-100"
-                                        style="heipalight: 400px; object-fit: cover;">
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 col-12 animate-fade-in-up delay-1">
-                            <div class="wt-image-wrapper position-relative overflow-hidden rounded-4 shadow-lg">
-                                <img src="{{ asset('assets-landing/img/tim/team2.jpeg')}}"
-                                        alt="Foto Kanan"
-                                        class="img-fluid w-100"
-                                        style="height: 400px; object-fit: cover;">
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
         </main>
     </div>
 
@@ -708,16 +722,23 @@
                         </li>
                         <li class="mb-3 d-flex">
                             <i class="fas fa-phone-alt text-warning me-3 mt-1"></i>
-                            <span>0822 1000 8380</span>
+                            <a href="https://wa.me/6282210008380" target="_blank" rel="noopener noreferrer"
+                                class="text-white text-decoration-none">
+                                0822 1000 8380
+                            </a>
                         </li>
                         <li class="mb-3 d-flex">
                             <i class="fas fa-envelope text-warning me-3 mt-1"></i>
-                            <a href="mailto:hello@wrappingtroops.com"
-                                class="text-white text-decoration-none">hello@wrappingtroops.com</a>
+                            <a href="mailto:hello@wrappingtroops.com" class="text-white text-decoration-none">
+                                hello@wrappingtroops.com
+                            </a>
                         </li>
                         <li class="mb-3 d-flex">
                             <i class="fab fa-instagram text-warning me-3 mt-1"></i>
-                            <a href="#" class="text-white text-decoration-none">@wrappingtroops</a>
+                            <a href="https://www.instagram.com/wrappingtroopsoke" target="_blank"
+                                rel="noopener noreferrer" class="text-white text-decoration-none">
+                                @wrappingtroops
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -734,7 +755,7 @@
 
                 <!-- <div class="col-lg-3 col-md-12 d-none d-lg-block position-relative">
                     <div class="wt-footer-mascot-container">
-                        <img src="{{ asset('assets-landing/img/mascot-footer.png')}}" alt="Wrapping Troops Mascot"
+                        <img src="{{ asset('assets-landing/img/mascot-footer.png') }}" alt="Wrapping Troops Mascot"
                             class="img-fluid wt-footer-mascot">
                     </div>
                 </div> -->
@@ -753,13 +774,13 @@
     </footer>
 
     <button id="btnBackToTop" title="Go to top">
-        <img src="{{ asset('assets-landing/img/go-to.png')}}" alt="" srcset="">
+        <img src="{{ asset('assets-landing/img/go-to.png') }}" alt="" srcset="">
     </button>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     {{-- <script src="{{ asset('assets-landing/script.js') }}"></script> --}}
-    <script>
+<script>
         // Ambil elemen tombol
         let mybutton = document.getElementById("btnBackToTop");
 
@@ -767,18 +788,18 @@
         window.onscroll = function() {scrollFunction()};
 
         function scrollFunction() {
-        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-            mybutton.style.display = "block";
-        } else {
-            mybutton.style.display = "none";
-        }
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
         }
 
         // Saat tombol diklik, scroll kembali ke atas
         mybutton.addEventListener("click", function() {
-            // Scroll halus untuk browser modern
             window.scrollTo({top: 0, behavior: 'smooth'});
         });
+
         document.addEventListener("DOMContentLoaded", function() {
 
             const videoContainer = document.querySelector('.intro-video-container');
@@ -787,127 +808,107 @@
             const navbar = document.querySelector('.wt-navbar-redesign');
             const contentWrapper = document.getElementById('main-content-wrapper');
 
-            // [FIX] Hapus kunci animasi CSS setelah 2.5 detik (sesuai durasi animasi di CSS)
-            // Supaya JS bisa mengambil alih properti 'transform' untuk efek zoom
+            // Hapus kunci animasi CSS setelah 2.5 detik
             setTimeout(() => {
                 if(videoContainer) {
                     videoContainer.style.animation = 'none';
                 }
-            }, 2500); // 2500ms = 2.5 detik
+            }, 2500);
+
+            // Gunakan variabel ini untuk mencegah requestAnimationFrame menumpuk
+            let ticking = false;
 
             window.addEventListener('scroll', function() {
-                let scrollY = window.scrollY;
-                let windowHeight = window.innerHeight;
+                if (!ticking) {
+                    window.requestAnimationFrame(function() {
+                        let scrollY = window.scrollY;
+                        let windowHeight = window.innerHeight;
+                        let scrollRatio = scrollY / windowHeight;
 
-                // Hitung progres scroll
-                let scrollRatio = scrollY / windowHeight;
+                        // --- EFEK ZOOM & FADE OUT (SUPER SMOOTH) ---
+                        if (scrollRatio <= 1.5) {
 
-                // --- EFEK ZOOM & FADE OUT ---
-                if (scrollRatio <= 1.5) {
+                            // [REVISI 1] Zoom diperlambat drastis agar tidak kebablasan
+                            let scaleMultiplier = 0.3; // Sangat halus
+                            let scaleValue = 1 + (scrollRatio * scaleMultiplier);
+                            scaleValue = Math.min(scaleValue, 1.3); // Batas maksimal zoom hanya 1.3x
 
-                    // Zoom: Awal 1, Maksimal 3.5
-                    let scaleMultiplier = 2;
-                    let scaleValue = 1 + (scrollRatio * scaleMultiplier);
+                            if(videoContainer) {
+                                // Terapkan scale langsung tanpa CSS transition agar tidak patah
+                                videoContainer.style.transform = `scale(${scaleValue})`;
+                            }
 
-                    // Batasi scale
-                    scaleValue = Math.min(scaleValue, 3.5);
+                            // [REVISI 2] Fade out dipercepat agar transparan sempurna sebelum foto utama
+                            let opacityValue = 1 - (scrollRatio * 2.5);
+                            if(opacityValue < 0) opacityValue = 0;
 
-                    // Terapkan Zoom ke Container
-                    if(videoContainer) {
-                        videoContainer.style.transform = `scale(${scaleValue})`;
-                    }
+                            if(introLogo) introLogo.style.opacity = opacityValue;
+                            if(scrollTrigger) scrollTrigger.style.opacity = opacityValue;
+                            if(videoContainer) videoContainer.style.opacity = opacityValue;
+                        }
 
-                    // Fade out elemen intro (Logo & Text Scroll)
-                    let opacityValue = 1 - (scrollRatio * 1.5);
-                    if(opacityValue < 0) opacityValue = 0;
+                        // --- LOGIKA KONTEN MUNCUL ---
+                        if (scrollY > (windowHeight * 0.1)) {
+                            contentWrapper.classList.add('content-visible');
+                            navbar.classList.remove('hidden-nav');
+                            navbar.classList.add('visible-nav');
+                        } else {
+                            contentWrapper.classList.remove('content-visible');
+                            navbar.classList.add('hidden-nav');
+                            navbar.classList.remove('visible-nav');
+                        }
 
-                    if(introLogo) introLogo.style.opacity = opacityValue;
-                    if(scrollTrigger) scrollTrigger.style.opacity = opacityValue;
-                }
+                        // Navbar Effect
+                        if (scrollY > 50) {
+                            navbar.classList.add('wt-navbar-scrolled');
+                        } else {
+                            navbar.classList.remove('wt-navbar-scrolled');
+                        }
 
-                // --- LOGIKA KONTEN MUNCUL (FADE IN) ---
-                // Konten mulai muncul saat scroll sedikit saja
-                if (scrollY > (windowHeight * 0.1)) {
-                    contentWrapper.classList.add('content-visible');
-
-                    navbar.classList.remove('hidden-nav');
-                    navbar.classList.add('visible-nav');
-                } else {
-                    contentWrapper.classList.remove('content-visible');
-
-                    navbar.classList.add('hidden-nav');
-                    navbar.classList.remove('visible-nav');
+                        ticking = false;
+                    });
+                    ticking = true;
                 }
             });
 
-            // 1. DAFTAR SEMUA FILE GAMBAR DARI PATH ANDA
-            // Path dasar sesuai struktur folder Anda
+            // --- PORTFOLIO DYNAMIC GRID ---
             const basePath = "assets/img/Portofolio/";
-
             const portfolioImagesList = @json($portofolio->pluck('image'));
-
-            // Seleksi semua elemen gambar di grid
             const gridImages = document.querySelectorAll('.portfolio-grid-img');
 
-            // Fungsi untuk mendapatkan URL gambar acak dari list
             function getRandomImageUrl() {
+                if(!portfolioImagesList || portfolioImagesList.length === 0) return '';
                 const randomIndex = Math.floor(Math.random() * portfolioImagesList.length);
                 return basePath + portfolioImagesList[randomIndex];
             }
 
-            // Fungsi untuk mengganti gambar pada elemen tertentu dengan efek fade
             function swapImage(imgElement) {
-                // 1. Fade Out: Hapus class active agar opacity jadi 0
                 imgElement.classList.remove('fade-in-active');
-
-                // Tunggu sebentar (500ms sesuai durasi transisi CSS) sampai fade out selesai
                 setTimeout(() => {
-                    // 2. Ganti Source Gambar
                     imgElement.src = getRandomImageUrl();
-
-                    // 3. Fade In: Tambahkan kembali class active agar opacity jadi 1
-                    // Menggunakan setTimeout kecil untuk memastikan browser mendeteksi perubahan DOM
                     setTimeout(() => {
                         imgElement.classList.add('fade-in-active');
                     }, 50);
                 }, 500);
             }
 
+            if(gridImages.length > 0) {
+                gridImages.forEach((img, index) => {
+                    img.src = getRandomImageUrl();
+                    setTimeout(() => {
+                        img.classList.add('fade-in-active');
+                    }, index * 100);
 
-            // --- INISIALISASI & PENGATURAN INTERVAL ---
+                    const minDelay = 3000;
+                    const maxDelay = 7000;
+                    const randomDelay = Math.floor(Math.random() * (maxDelay - minDelay + 1) + minDelay);
 
-            // Loop melalui setiap sel gambar di grid (total 9)
-            gridImages.forEach((img, index) => {
-                // A. Pengisian Awal: Isi semua kotak dengan gambar acak saat loading
-                img.src = getRandomImageUrl();
-                // Beri sedikit delay pada pengisian awal agar efek munculnya berurutan cantik
-                setTimeout(() => {
-                    img.classList.add('fade-in-active');
-                }, index * 100);
-
-
-                // B. Pengaturan Interval Swapping
-                const minDelay = 3000;
-                const maxDelay = 7000;
-                const randomDelay = Math.floor(Math.random() * (maxDelay - minDelay + 1) + minDelay);
-
-                // Set interval unik untuk setiap gambar
-                setInterval(() => {
-                    swapImage(img);
-                }, randomDelay);
-            });
-
-            // Navbar Scroll Effect
-            window.addEventListener('scroll', function() {
-                const navbar = document.querySelector('.wt-navbar-redesign');
-                if (window.scrollY > 50) {
-                    navbar.classList.add('wt-navbar-scrolled');
-                } else {
-                    navbar.classList.remove('wt-navbar-scrolled');
-                }
-            });
+                    setInterval(() => {
+                        swapImage(img);
+                    }, randomDelay);
+                });
+            }
         });
-
     </script>
 </body>
 
