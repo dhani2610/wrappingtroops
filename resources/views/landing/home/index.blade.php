@@ -79,12 +79,12 @@
                     <div class="row align-items-center">
 
                         <div class="col-lg-12 text-white text-center text-lg-start py-5">
-                            <div class="hero-logo-wrapper mb-4 animate-fade-in-up">
+                            {{-- <div class="hero-logo-wrapper mb-4 animate-fade-in-up">
                                 <center>
                                     <img src="{{ asset('assets-landing/fe/Logo Panjang.png') }}"
                                         alt="Wrapping Troops Logo" class="img-fluid hero-main-logo">
                                 </center>
-                            </div>
+                            </div> --}}
                         </div>
 
                     </div>
