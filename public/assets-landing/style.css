@@ -458,7 +458,7 @@ body {
     width: 100%;
     height: 137%;
     /* Gunakan gambar jembatan dari desain lama Anda */
-    background-image: url('fe/portofolio/hero2.png');
+    background-image: url('fe/portofolio/hero.jpeg');
     background-size: cover;
     background-position: center;
     z-index: 1;
