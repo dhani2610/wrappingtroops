@@ -36,6 +36,12 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+
+            \VinkiusLabs\LaravelPageSpeed\Middleware\InlineCss::class,
+            \VinkiusLabs\LaravelPageSpeed\Middleware\ElideAttributes::class,
+            \VinkiusLabs\LaravelPageSpeed\Middleware\InsertDNSPrefetch::class,
+            // \VinkiusLabs\LaravelPageSpeed\Middleware\CollapseWhitespace::class,
+            \VinkiusLabs\LaravelPageSpeed\Middleware\DeferJavascript::class,
         ],
 
         'api' => [

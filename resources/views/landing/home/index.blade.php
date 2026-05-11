@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wrapping Troops</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -35,8 +38,8 @@
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark wt-navbar-redesign transition-all hidden-nav">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="{{ asset('assets-landing/fe/Wrappingtroops logo.png') }}" alt="Wrapping Troops Logo"
-                    height="55">
+                <img loading="lazy" src="{{ asset('assets-landing/fe/Wrappingtroops logo.png') }}"
+                    alt="Wrapping Troops Logo" height="55">
             </a>
 
             <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas"
@@ -77,16 +80,9 @@
 
                 <div class="container position-relative" style="z-index: 2;">
                     <div class="row align-items-center">
-
                         <div class="col-lg-12 text-white text-center text-lg-start py-5">
-                            {{-- <div class="hero-logo-wrapper mb-4 animate-fade-in-up">
-                                <center>
-                                    <img src="{{ asset('assets-landing/fe/Logo Panjang.png') }}"
-                                        alt="Wrapping Troops Logo" class="img-fluid hero-main-logo">
-                                </center>
-                            </div> --}}
+                            {{-- Logo Komen --}}
                         </div>
-
                     </div>
                 </div>
             </section>
@@ -94,7 +90,7 @@
             <section class="wt-orange-video-section">
                 <div class="container-fluid p-0">
                     <div class="wt-full-video-wrapper">
-                        <iframe class="wt-video-fluid"
+                        <iframe class="wt-video-fluid" loading="lazy"
                             src="https://www.youtube.com/embed/K7ShUN8OdIs?autoplay=1&mute=1&loop=1&playlist=K7ShUN8OdIs&playsinline=1&controls=0&rel=0"
                             frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -135,14 +131,15 @@
                         </div>
                         <div class="col-lg-6 animate-fade-in-right" style="background-color: #FF9900;">
                             <div class="wt-img-frame rounded-4 overflow-hidden">
-                                <img src="{{ asset('assets-landing/fe/Foto Website/kenapa-pilih.png') }}"
+                                <img loading="lazy"
+                                    src="{{ asset('assets-landing/fe/Foto Website/kenapa-pilih.png') }}"
                                     alt="Wrapping Troops Vehicle" class="img-fluid">
                             </div>
                         </div>
                     </div>
-
                 </div>
             </section>
+
             <section id="whyChooseUs" class="wt-section-padding bg-light">
                 <div class="container">
                     <div class="row g-4 justify-content-center">
@@ -209,46 +206,20 @@
                 </div>
             </section>
 
-            <section id="dynamicPortfolio" style="background : #f4f4f4" class=" overflow-hidden">
-                <div class="container py-5 text-center text-white animate-fade-in-up">
+            <section id="dynamicPortfolio" style="background : #f4f4f4" class="overflow-hidden">
+                <div class="container py-5 text-center text-dark animate-fade-in-up">
                     <h5 class="text-warning text-uppercase fw-bold tracking-wider mb-2">Our Work</h5>
                     <h2 class="fw-bold display-6" style="color: black;">Portofolio</h2>
-                    <div class="wt-separator mx-auto bg-warning mt-3" style="width: 60px; height: 3px;"></div>
+                    <div class="wt-separator mx-auto bg-warning mt-3 mb-5" style="width: 60px; height: 3px;"></div>
                 </div>
 
                 <div class="container-fluid px-0">
                     <div class="row g-0" id="portfolioGridRow">
-
-                        <div class="col-lg-4 col-md-6 col-12 portfolio-grid-cell animate-fade-in-up">
-                            <img src="" alt="Portfolio Work" class="img-fluid portfolio-grid-img">
+                        <div class="col-12 text-center py-5" id="portfolio-loader">
+                            <div class="spinner-border text-warning" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
                         </div>
-                        <div class="col-lg-4 col-md-6 col-12 portfolio-grid-cell animate-fade-in-up delay-1">
-                            <img src="" alt="Portfolio Work" class="img-fluid portfolio-grid-img">
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-12 portfolio-grid-cell animate-fade-in-up delay-2">
-                            <img src="" alt="Portfolio Work" class="img-fluid portfolio-grid-img">
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 col-12 portfolio-grid-cell animate-fade-in-up">
-                            <img src="" alt="Portfolio Work" class="img-fluid portfolio-grid-img">
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-12 portfolio-grid-cell animate-fade-in-up delay-1">
-                            <img src="" alt="Portfolio Work" class="img-fluid portfolio-grid-img">
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-12 portfolio-grid-cell animate-fade-in-up delay-2">
-                            <img src="" alt="Portfolio Work" class="img-fluid portfolio-grid-img">
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 col-12 portfolio-grid-cell animate-fade-in-up">
-                            <img src="" alt="Portfolio Work" class="img-fluid portfolio-grid-img">
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-12 portfolio-grid-cell animate-fade-in-up delay-1">
-                            <img src="" alt="Portfolio Work" class="img-fluid portfolio-grid-img">
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-12 portfolio-grid-cell animate-fade-in-up delay-2">
-                            <img src="" alt="Portfolio Work" class="img-fluid portfolio-grid-img">
-                        </div>
-
                     </div>
                 </div>
             </section>
@@ -270,8 +241,8 @@
                                 class="wt-service-card h-100 text-center p-4 rounded-4 bg-white shadow-sm position-relative overflow-hidden">
                                 <div class="service-number-bg">01</div>
                                 <div class="service-icon-wrapper mb-4">
-                                    <img src="{{ asset('assets-landing/img/logo-nav.png') }}" alt="Icon"
-                                        class="img-fluid" height="60">
+                                    <img loading="lazy" src="{{ asset('assets-landing/img/logo-nav.png') }}"
+                                        alt="Icon" class="img-fluid" height="60">
                                 </div>
                                 <h4 class="fw-bold text-warning mb-3">Vinyl Applicator</h4>
                                 <p class="text-muted mb-0">
@@ -285,8 +256,8 @@
                                 class="wt-service-card h-100 text-center p-4 rounded-4 bg-white shadow-sm position-relative overflow-hidden">
                                 <div class="service-number-bg">02</div>
                                 <div class="service-icon-wrapper mb-4">
-                                    <img src="{{ asset('assets-landing/img/logo-nav.png') }}" alt="Icon"
-                                        class="img-fluid" height="60">
+                                    <img loading="lazy" src="{{ asset('assets-landing/img/logo-nav.png') }}"
+                                        alt="Icon" class="img-fluid" height="60">
                                 </div>
                                 <h4 class="fw-bold text-warning mb-3">Graphic Design</h4>
                                 <p class="text-muted mb-0">
@@ -302,8 +273,8 @@
                                     class="wt-service-card h-100 text-center p-4 rounded-4 bg-white shadow-sm position-relative overflow-hidden">
                                     <div class="service-number-bg">03</div>
                                     <div class="service-icon-wrapper mb-4">
-                                        <img src="{{ asset('assets-landing/img/logo-nav.png') }}" alt="Icon"
-                                            class="img-fluid" height="60">
+                                        <img loading="lazy" src="{{ asset('assets-landing/img/logo-nav.png') }}"
+                                            alt="Icon" class="img-fluid" height="60">
                                     </div>
                                     <h4 class="fw-bold text-warning mb-3">Printing</h4>
                                     <p class="text-muted mb-0">
@@ -321,8 +292,8 @@
                                     class="wt-service-card h-100 text-center p-4 rounded-4 bg-white shadow-sm position-relative overflow-hidden">
                                     <div class="service-number-bg">04</div>
                                     <div class="service-icon-wrapper mb-4">
-                                        <img src="{{ asset('assets-landing/img/logo-nav.png') }}" alt="Icon"
-                                            class="img-fluid" height="60">
+                                        <img loading="lazy" src="{{ asset('assets-landing/img/logo-nav.png') }}"
+                                            alt="Icon" class="img-fluid" height="60">
                                     </div>
                                     <h4 class="fw-bold text-warning mb-3">Advertising</h4>
                                     <p class="text-muted mb-0">
@@ -488,29 +459,28 @@
                 </div>
             </section>
             <section id="clients" class="wt-section-padding bg-white">
+                <div class="row mb-5 justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h5 class="text-warning text-uppercase fw-bold tracking-wider mb-2">Our Clients</h5>
+                        <h2 class="fw-bold display-6">Klien Terpercaya Kami</h2>
+                        <div class="wt-separator mx-auto"></div>
+                        <p class="text-muted mt-3">Dipercaya oleh berbagai perusahaan nasional hingga
+                            multinasional.
+                        </p>
+                    </div>
+                </div>
                 <div class="container">
                     <div class="row mb-5 justify-content-center">
-                        <div class="col-lg-8 text-center">
-                            <h5 class="text-warning text-uppercase fw-bold tracking-wider mb-2">Our Clients</h5>
-                            <h2 class="fw-bold display-6">Klien Terpercaya Kami</h2>
-                            <div class="wt-separator mx-auto"></div>
-                            <p class="text-muted mt-3">Dipercaya oleh berbagai perusahaan nasional hingga
-                                multinasional.
-                            </p>
-                        </div>
                     </div>
 
-                    <div
+                    <div id="klien-container"
                         class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-4 align-items-center justify-content-center">
 
-                        @foreach ($klien as $index => $k)
-                            <div class="col">
-                                <div class="wt-client-card"><img src="{{ asset('assets/img/klien/' . $k->image) }}"
-                                        alt="{{ $k->title }}" class="client-logo">
-                                </div>
+                        <div class="col-12 text-center" id="klien-loader">
+                            <div class="spinner-border text-warning" role="status">
+                                <span class="visually-hidden">Loading...</span>
                             </div>
-                        @endforeach
-
+                        </div>
 
                     </div>
                 </div>
@@ -519,11 +489,6 @@
 
             <section class="wt-section-padding bg-white " style="padding-top: 10px!important;">
                 <div class="container">
-                    <!-- <div class="row mb-5 justify-content-center">
-                        <div class="col-lg-8 text-center">
-                            <h2 class="fw-bold display-6">MY TEAM</h2>
-                        </div>
-                    </div> -->
                     <div class="d-flex justify-content-center align-items-center mb-4">
 
                         <div class="wt-line-accent-new me-3"></div>
@@ -539,15 +504,17 @@
 
                         <div class="col-md-6 col-12 animate-fade-in-up">
                             <div class="wt-image-wrapper position-relative overflow-hidden rounded-4 shadow-lg">
-                                <img src="{{ asset('assets-landing/img/tim/team1.jpeg') }}" alt="Foto Kiri"
-                                    class="img-fluid w-100" style="heipalight: 400px; object-fit: cover;">
+                                <img loading="lazy" src="{{ asset('assets-landing/img/tim/team1.jpeg') }}"
+                                    alt="Foto Kiri" class="img-fluid w-100"
+                                    style="heipalight: 400px; object-fit: cover;">
                             </div>
                         </div>
 
                         <div class="col-md-6 col-12 animate-fade-in-up delay-1">
                             <div class="wt-image-wrapper position-relative overflow-hidden rounded-4 shadow-lg">
-                                <img src="{{ asset('assets-landing/img/tim/team2.jpeg') }}" alt="Foto Kanan"
-                                    class="img-fluid w-100" style="height: 400px; object-fit: cover;">
+                                <img loading="lazy" src="{{ asset('assets-landing/img/tim/team2.jpeg') }}"
+                                    alt="Foto Kanan" class="img-fluid w-100"
+                                    style="height: 400px; object-fit: cover;">
                             </div>
                         </div>
 
@@ -562,7 +529,7 @@
                     <div class="row align-items-center mb-5 pb-lg-5">
                         <div class="col-lg-6 mb-4 mb-lg-0 animate-fade-in-up">
                             <div class="wt-image-wrapper">
-                                <img src="{{ asset('assets-landing/fe/portofolio/Klien UMKM.webp') }}"
+                                <img loading="lazy" src="{{ asset('assets-landing/fe/portofolio/Klien UMKM.webp') }}"
                                     alt="Stiker Branding Mobil" class="img-fluid rounded-4 shadow-lg">
                                 <div class="wt-blob-accent"></div>
                             </div>
@@ -613,7 +580,8 @@
 
                         <div class="col-lg-6 order-1 order-lg-2 mb-4 mb-lg-0 animate-fade-in-up delay-1">
                             <div class="wt-image-wrapper">
-                                <img src="{{ asset('assets-landing/fe/portofolio/Pasang-Kering.webp') }}"
+                                <img loading="lazy"
+                                    src="{{ asset('assets-landing/fe/portofolio/Pasang-Kering.webp') }}"
                                     alt="Jenis Mobil Branding" class="img-fluid rounded-4 shadow-lg">
                                 <div class="wt-blob-accent blob-right"></div>
                             </div>
@@ -628,7 +596,8 @@
                     <div class="row align-items-center mb-5 pb-lg-5">
                         <div class="col-lg-6 mb-4 mb-lg-0 animate-fade-in-up">
                             <div class="wt-image-wrapper">
-                                <img src="{{ asset('assets-landing/fe/portofolio/Event-Internasional.webp') }}"
+                                <img loading="lazy"
+                                    src="{{ asset('assets-landing/fe/portofolio/Event-Internasional.webp') }}"
                                     alt="Neon Box Race Control" class="img-fluid rounded-4 shadow-lg">
                                 <div class="wt-blob-accent"></div>
                             </div>
@@ -691,7 +660,8 @@
 
                         <div class="col-lg-6 order-1 order-lg-2 mb-4 mb-lg-0 animate-fade-in-up delay-1">
                             <div class="wt-image-wrapper">
-                                <img src="{{ asset('assets-landing/fe/portofolio/IMG-20220126-WA0009.webp') }}"
+                                <img loading="lazy"
+                                    src="{{ asset('assets-landing/fe/portofolio/IMG-20220126-WA0009.webp') }}"
                                     alt="Digital Printing Indoor" class="img-fluid rounded-4 shadow-lg">
                                 <div class="wt-blob-accent blob-right"></div>
                             </div>
@@ -712,9 +682,6 @@
                 <div class="col-lg-4 col-md-6 mb-4">
                     <h5 class="text-warning text-uppercase fw-bold mb-4">Headquarters</h5>
                     <h5 class="text-white text-uppercase  mb-4">PT SATU KREASI INDONESIA</h5>
-                    <!-- <h2 class="fw-bold text-uppercase tracking-widest mb-2 animate-fade-in-up delay-1">
-                                    PT SATU KREASI INDONESIA
-                                </h2> -->
                     <ul class="list-unstyled wt-footer-contact">
                         <li class="mb-3 d-flex">
                             <i class="fas fa-map-marker-alt text-warning me-3 mt-1"></i>
@@ -752,13 +719,6 @@
                             title="Wrappingtroops" aria-label="Wrappingtroops"></iframe>
                     </div>
                 </div>
-
-                <!-- <div class="col-lg-3 col-md-12 d-none d-lg-block position-relative">
-                    <div class="wt-footer-mascot-container">
-                        <img src="{{ asset('assets-landing/img/mascot-footer.png') }}" alt="Wrapping Troops Mascot"
-                            class="img-fluid wt-footer-mascot">
-                    </div>
-                </div> -->
             </div>
         </div>
 
@@ -766,7 +726,7 @@
             <div class="container text-center text-md-start">
                 <div class="row align-items-center">
                     <div class="col-md-6 small">
-                        &copy; 2022 — WrappingTroops.com All Rights Reserved.
+                        © 2022 — WrappingTroops.com All Rights Reserved.
                     </div>
                 </div>
             </div>
@@ -774,18 +734,20 @@
     </footer>
 
     <button id="btnBackToTop" title="Go to top">
-        <img src="{{ asset('assets-landing/img/go-to.png') }}" alt="" srcset="">
+        <img loading="lazy" src="{{ asset('assets-landing/img/go-to.png') }}" alt="" srcset="">
     </button>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    {{-- <script src="{{ asset('assets-landing/script.js') }}"></script> --}}
-<script>
-        // Ambil elemen tombol
+    <script>
+        // ==========================================
+        // 1. TOMBOL BACK TO TOP
+        // ==========================================
         let mybutton = document.getElementById("btnBackToTop");
 
-        // Saat pengguna scroll ke bawah 20px dari puncak dokumen, munculkan tombol
-        window.onscroll = function() {scrollFunction()};
+        window.onscroll = function() {
+            scrollFunction();
+        };
 
         function scrollFunction() {
             if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
@@ -795,13 +757,19 @@
             }
         }
 
-        // Saat tombol diklik, scroll kembali ke atas
         mybutton.addEventListener("click", function() {
-            window.scrollTo({top: 0, behavior: 'smooth'});
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
 
+        // ==========================================
+        // 2. EVENT SAAT HALAMAN SELESAI DI-LOAD
+        // ==========================================
         document.addEventListener("DOMContentLoaded", function() {
 
+            // --- A. ANIMASI HERO & NAVBAR (SCROLL EFFECT) ---
             const videoContainer = document.querySelector('.intro-video-container');
             const introLogo = document.querySelector('.intro-logo');
             const scrollTrigger = document.querySelector('.intro-scroll-trigger');
@@ -810,12 +778,11 @@
 
             // Hapus kunci animasi CSS setelah 2.5 detik
             setTimeout(() => {
-                if(videoContainer) {
+                if (videoContainer) {
                     videoContainer.style.animation = 'none';
                 }
             }, 2500);
 
-            // Gunakan variabel ini untuk mencegah requestAnimationFrame menumpuk
             let ticking = false;
 
             window.addEventListener('scroll', function() {
@@ -825,29 +792,25 @@
                         let windowHeight = window.innerHeight;
                         let scrollRatio = scrollY / windowHeight;
 
-                        // --- EFEK ZOOM & FADE OUT (SUPER SMOOTH) ---
+                        // Efek Zoom & Fade Out (Super Smooth)
                         if (scrollRatio <= 1.5) {
-
-                            // [REVISI 1] Zoom diperlambat drastis agar tidak kebablasan
-                            let scaleMultiplier = 0.3; // Sangat halus
+                            let scaleMultiplier = 0.3;
                             let scaleValue = 1 + (scrollRatio * scaleMultiplier);
-                            scaleValue = Math.min(scaleValue, 1.3); // Batas maksimal zoom hanya 1.3x
+                            scaleValue = Math.min(scaleValue, 1.3); // Batas maksimal zoom
 
-                            if(videoContainer) {
-                                // Terapkan scale langsung tanpa CSS transition agar tidak patah
+                            if (videoContainer) {
                                 videoContainer.style.transform = `scale(${scaleValue})`;
                             }
 
-                            // [REVISI 2] Fade out dipercepat agar transparan sempurna sebelum foto utama
                             let opacityValue = 1 - (scrollRatio * 2.5);
-                            if(opacityValue < 0) opacityValue = 0;
+                            if (opacityValue < 0) opacityValue = 0;
 
-                            if(introLogo) introLogo.style.opacity = opacityValue;
-                            if(scrollTrigger) scrollTrigger.style.opacity = opacityValue;
-                            if(videoContainer) videoContainer.style.opacity = opacityValue;
+                            if (introLogo) introLogo.style.opacity = opacityValue;
+                            if (scrollTrigger) scrollTrigger.style.opacity = opacityValue;
+                            if (videoContainer) videoContainer.style.opacity = opacityValue;
                         }
 
-                        // --- LOGIKA KONTEN MUNCUL ---
+                        // Logika Konten Muncul & Navbar Effect
                         if (scrollY > (windowHeight * 0.1)) {
                             contentWrapper.classList.add('content-visible');
                             navbar.classList.remove('hidden-nav');
@@ -858,7 +821,6 @@
                             navbar.classList.remove('visible-nav');
                         }
 
-                        // Navbar Effect
                         if (scrollY > 50) {
                             navbar.classList.add('wt-navbar-scrolled');
                         } else {
@@ -871,43 +833,130 @@
                 }
             });
 
-            // --- PORTFOLIO DYNAMIC GRID ---
-            const basePath = "assets/img/Portofolio/";
-            const portfolioImagesList = @json($portofolio->pluck('image'));
-            const gridImages = document.querySelectorAll('.portfolio-grid-img');
 
-            function getRandomImageUrl() {
-                if(!portfolioImagesList || portfolioImagesList.length === 0) return '';
-                const randomIndex = Math.floor(Math.random() * portfolioImagesList.length);
-                return basePath + portfolioImagesList[randomIndex];
-            }
+            // --- B. LAZY LOAD DATA (AJAX & INTERSECTION OBSERVER) ---
+            const observerOptions = {
+                rootMargin: "0px 0px 300px 0px" // Load saat user scroll 300px sebelum elemen terlihat
+            };
 
-            function swapImage(imgElement) {
-                imgElement.classList.remove('fade-in-active');
-                setTimeout(() => {
-                    imgElement.src = getRandomImageUrl();
-                    setTimeout(() => {
-                        imgElement.classList.add('fade-in-active');
-                    }, 50);
-                }, 500);
-            }
-
-            if(gridImages.length > 0) {
-                gridImages.forEach((img, index) => {
-                    img.src = getRandomImageUrl();
-                    setTimeout(() => {
-                        img.classList.add('fade-in-active');
-                    }, index * 100);
-
-                    const minDelay = 3000;
-                    const maxDelay = 7000;
-                    const randomDelay = Math.floor(Math.random() * (maxDelay - minDelay + 1) + minDelay);
-
-                    setInterval(() => {
-                        swapImage(img);
-                    }, randomDelay);
+            const sectionObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Load Portofolio
+                        if (entry.target.id === 'dynamicPortfolio') {
+                            loadPortfolioData();
+                            observer.unobserve(entry.target);
+                        }
+                        // Load Klien
+                        if (entry.target.id === 'clients') {
+                            loadKlienData();
+                            observer.unobserve(entry.target);
+                        }
+                    }
                 });
+            }, observerOptions);
+
+            // Mendaftarkan elemen yang akan dipantau
+            sectionObserver.observe(document.getElementById('dynamicPortfolio'));
+            sectionObserver.observe(document.getElementById('clients'));
+
+
+            // --- C. FUNGSI FETCH KLIEN ---
+            function loadKlienData() {
+                fetch("{{ route('api.klien') }}")
+                    .then(response => response.json())
+                    .then(data => {
+                        const container = document.getElementById('klien-container');
+                        if (container) {
+                            container.innerHTML = ''; // Hapus animasi loading spinner
+
+                            data.forEach(k => {
+                                const imgUrl = `{{ asset('assets/img/klien') }}/${k.image}`;
+                                container.innerHTML += `
+                                <div class="col animate-fade-in-up">
+                                    <div class="wt-client-card">
+                                        <img src="${imgUrl}" alt="${k.title || 'Client'}" class="client-logo" loading="lazy">
+                                    </div>
+                                </div>`;
+                            });
+                        }
+                    })
+                    .catch(error => console.error('Error loading klien:', error));
             }
+
+
+            // --- D. FUNGSI FETCH PORTOFOLIO (EFEK SWAPPING ANTI-LAG) ---
+            function loadPortfolioData() {
+                fetch("{{ route('api.portofolio') }}")
+                    .then(response => response.json())
+                    .then(portfolioImagesList => {
+                        if (!portfolioImagesList || portfolioImagesList.length === 0) return;
+
+                        const basePath = "{{ asset('assets/img/Portofolio') }}/";
+                        const gridRow = document.getElementById('portfolioGridRow');
+                        gridRow.innerHTML = ''; // Hapus spinner loading
+
+                        // 1. Buat 9 Kotak Grid secara otomatis
+                        for (let i = 0; i < 9; i++) {
+                            gridRow.innerHTML += `
+                            <div class="col-lg-4 col-md-6 col-12 portfolio-grid-cell" style="background: #000; overflow: hidden; aspect-ratio: 4/3;">
+                                <img src="" alt="Portfolio Work" class="portfolio-grid-img w-100 h-100"
+                                style="object-fit: cover; opacity: 0; transition: opacity 0.8s ease-in-out;">
+                            </div>`;
+                        }
+
+                        const gridImages = document.querySelectorAll('.portfolio-grid-img');
+
+                        // Fungsi ambil gambar acak
+                        function getRandomImageUrl() {
+                            const randomIndex = Math.floor(Math.random() * portfolioImagesList.length);
+                            return basePath + portfolioImagesList[randomIndex];
+                        }
+
+                        // Fungsi ganti gambar dengan transisi halus
+                        function swapImage(imgElement) {
+                            imgElement.style.opacity = 0; // Efek fade out (ngedip gelap)
+
+                            setTimeout(() => {
+                                imgElement.src = getRandomImageUrl();
+                                // Tunggu gambar selesai didownload baru di-fade in, agar tidak blank
+                                imgElement.onload = () => {
+                                    imgElement.style.opacity = 1;
+                                };
+                            }, 800); // Waktu transisi gelap
+                        }
+
+                        // 2. Jalankan Animasi untuk masing-masing kotak
+                        gridImages.forEach((img, index) => {
+                            // Tampilan Pertama Kali
+                            img.src = getRandomImageUrl();
+                            img.onload = () => {
+                                setTimeout(() => {
+                                    img.style.opacity = 1;
+                                }, index * 150);
+                            };
+
+                            const minDelay = 3000;
+                            const maxDelay = 7000;
+                            const randomDelay = Math.floor(Math.random() * (maxDelay - minDelay + 1) +
+                                minDelay);
+
+                            setInterval(() => {
+                                // RAHASIA ANTI LAG: Hanya ganti gambar jika kotak Portofolio sedang terlihat di layar HP/Monitor!
+                                const rect = img.getBoundingClientRect();
+                                const isVisible = (rect.top >= -500 && rect.bottom <= (window
+                                    .innerHeight || document.documentElement
+                                    .clientHeight) + 500);
+
+                                if (isVisible) {
+                                    swapImage(img);
+                                }
+                            }, randomDelay);
+                        });
+                    })
+                    .catch(error => console.error('Error loading portofolio:', error));
+            }
+
         });
     </script>
 </body>

@@ -34,6 +34,19 @@ class FrontendController extends Controller
         return view('landing.home.index',$data);
     }
 
+    public function getKlien()
+    {
+        $klien = Klien::orderBy('created_at','desc')->get();
+        return response()->json($klien);
+    }
+
+    public function getPortofolio()
+    {
+        // Cukup ambil kolom image-nya saja agar response lebih ringan
+        $portofolio = Portofolio::orderBy('created_at','desc')->pluck('image');
+        return response()->json($portofolio);
+    }
+
     public function detailProd($id){
         $data['slider'] = Slider::whereNull('deleted_at')->where('status',1)->orderBy('created_at','desc')->get();
         $data['product'] = Services::whereNull('deleted_at')->where('status',1)->orderBy('created_at','desc')->limit(5)->whereNotIn('id',[$id])->get();

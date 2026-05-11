@@ -21,6 +21,10 @@ Auth::routes();
 
 Route::get('/', 'FrontendController@home')->name('index');
 
+// Route khusus untuk AJAX
+Route::get('/api/klien', 'FrontendController@getKlien')->name('api.klien');
+Route::get('/api/portofolio', 'FrontendController@getPortofolio')->name('api.portofolio');
+
 /**
  * Admin routes
  */
